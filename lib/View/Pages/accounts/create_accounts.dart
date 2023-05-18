@@ -2,8 +2,8 @@
 
 import 'package:carehealth/constatnt/image_app.dart';
 import 'package:flutter/material.dart';
-import '../../widget/create_Accounts/container.dart';
-import '../../widget/create_Accounts/mytext_field.dart';
+import '../../widget/accounts/container.dart';
+import '../../widget/accounts/mytext_field.dart';
 
 class Create_Accounts extends StatefulWidget {
   const Create_Accounts({super.key});

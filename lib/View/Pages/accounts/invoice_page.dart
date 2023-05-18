@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../../widget/create_Accounts/container.dart';
-import '../../widget/create_Accounts/row_check.dart';
+import '../../widget/accounts/container.dart';
+import '../../widget/accounts/row_check.dart';
 
 class Invoice_Page extends StatelessWidget {
   const Invoice_Page({super.key});

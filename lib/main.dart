@@ -11,11 +11,15 @@ import 'View/Pages/choose_major/alert_dialog.dart';
 import 'View/Pages/choose_major/choose_major.dart';
 import 'View/Pages/accounts/appointment.dart';
 import 'View/Pages/accounts/invoice_page.dart';
-import 'View/Pages/accounts/my_drawer_header.dart';
-import 'View/Pages/accounts/profile_drawer.dart';
+import 'View/Pages/drawers/about.dart';
+import 'View/Pages/drawers/my_drawer_header.dart';
+import 'View/Pages/drawers/notifications_drawer.dart';
+import 'View/Pages/drawers/profile_drawer.dart';
 import 'View/Pages/accounts/verify_account.dart';
 import 'View/Pages/accounts/write__review.dart';
 import 'View/Pages/accounts/login_page.dart';
+import 'View/Pages/drawers/subscription.dart';
+import 'View/Pages/drawers/support.dart';
 import 'View/Pages/home_page/home-page.dart';
 import 'View/Pages/informations/adding_products_pharmacy.dart';
 import 'View/Pages/informations/appointment_booking.dart';
@@ -60,7 +64,7 @@ class MyApp extends StatelessWidget {
       title: 'Clinic_app',
       color: ColorApp.backgroundYallowColor,
       //
-      home: HomePage18_3(),
+      home: HomePage18_1(),
     );
   }
 }
