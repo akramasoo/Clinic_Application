@@ -1,11 +1,12 @@
-import '../../../controller/onboarding_Controller/onBoarding_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../controller/onBoarding_controller.dart';
 
 class NextButtomWidget extends GetView<OnBoardingControllerImp> {
   const NextButtomWidget({
     Key? key,
-    this.onTap,
+    required this.onTap,
   }) : super(key: key);
   final void Function()? onTap;
   @override
@@ -13,9 +14,7 @@ class NextButtomWidget extends GetView<OnBoardingControllerImp> {
     return Row(
       children: [
         InkWell(
-          onTap: () {
-            controller.nextPage();
-          },
+          onTap: onTap,
           child: const Text(
             "Next",
             style: TextStyle(

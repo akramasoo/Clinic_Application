@@ -3,7 +3,7 @@
 import 'package:carehealth/model/onBoarding/onboarding_model_data.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../controller/onboarding_Controller/onBoarding_controller.dart';
+import '../../../controller/onBoarding_controller.dart';
 
 class OnBoarding extends GetView<OnBoardingControllerImp> {
   const OnBoarding({Key? key}) : super(key: key);

@@ -1,40 +1,16 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
-import 'package:carehealth/View/Pages/home_page/homePage18_1.dart';
-import 'package:carehealth/View/Pages/home_page/homePage18_3.dart';
-import 'package:flutter/material.dart';
+import 'package:carehealth/routes/routes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
-import 'View/Pages/accounts/create_accounts.dart';
-import 'View/Pages/choose_major/alert_dialog.dart';
-import 'View/Pages/choose_major/choose_major.dart';
-import 'View/Pages/accounts/appointment.dart';
-import 'View/Pages/accounts/invoice_page.dart';
-import 'View/Pages/drawers/about.dart';
-import 'View/Pages/drawers/my_drawer_header.dart';
-import 'View/Pages/drawers/notifications_drawer.dart';
-import 'View/Pages/drawers/profile_drawer.dart';
-import 'View/Pages/accounts/verify_account.dart';
-import 'View/Pages/accounts/write__review.dart';
-import 'View/Pages/accounts/login_page.dart';
-import 'View/Pages/drawers/subscription.dart';
-import 'View/Pages/drawers/support.dart';
-import 'View/Pages/home_page/home-page.dart';
-import 'View/Pages/informations/adding_products_pharmacy.dart';
-import 'View/Pages/informations/appointment_booking.dart';
-import 'View/Pages/informations/center_information.dart';
-import 'View/Pages/informations/new_doctor.dart';
-import 'View/Pages/onboarding/onBoarding_start.dart';
-import 'View/Pages/onboarding/onboarding_one.dart';
-import 'View/Pages/onboarding/onboarding_three.dart';
-import 'View/Pages/onboarding/onboarding_two.dart';
-import 'View/Pages/profile/edit_profile.dart';
-import 'View/Pages/profile/notifications.dart';
 import 'constatnt/color_app.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -64,7 +40,8 @@ class MyApp extends StatelessWidget {
       title: 'Clinic_app',
       color: ColorApp.backgroundYallowColor,
       //
-      home: HomePage18_1(),
+      getPages: AppPage.routes,
+      initialRoute: AppPage.getBoarding_Start(),
     );
   }
 }

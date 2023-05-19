@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../constatnt/color_app.dart';
-import '../../../controller/onboarding_Controller/onBoarding_controller.dart';
+import '../../../controller/onBoarding_controller.dart';
 import '../../../model/onBoarding/onboarding_model_data.dart';
 
 class SlidersWidget extends StatelessWidget {

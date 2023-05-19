@@ -5,7 +5,7 @@ import 'package:carehealth/constatnt/font_app_styles.dart';
 import 'package:carehealth/constatnt/image_app.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../controller/onboarding_Controller/onBoarding_controller.dart';
+import '../../../controller/onBoarding_controller.dart';
 import '../../../model/onBoarding/onboarding_model_data.dart';
 import '../../widget/onboarding/custom_bottun_onboarding.dart';
 import 'OnBoarding.dart';
@@ -83,7 +83,6 @@ class OnBoardingStart extends GetView<OnBoardingControllerImp> {
                         CustomBottumOnBoarding(
                           onPressed: () {
                             Get.to(const OnBoarding());
-                            //controller.nextPage();
                           },
                           textTitle: ('Lets Start'),
                           color: ColorApp.primaryColor,

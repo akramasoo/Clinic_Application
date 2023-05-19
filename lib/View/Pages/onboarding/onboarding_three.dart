@@ -1,10 +1,13 @@
-// ignore_for_file: sized_box_for_whitespace, avoid_unnecessary_containers
+// ignore_for_file: sized_box_for_whitespace, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, unused_import
 
+import 'package:carehealth/View/Pages/home_page/homePage18_1.dart';
+import 'package:carehealth/View/Pages/home_page/navBar.dart';
 import 'package:carehealth/constatnt/color_app.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../controller/onboarding_Controller/onBoarding_controller.dart';
 import '../../../constatnt/font_app_styles.dart';
+import '../../../controller/onBoarding_controller.dart';
+import '../../../routes/routes.dart';
 import '../../widget/onboarding/next_bottun.dart';
 import '../../widget/onboarding/skip_buttom.dart';
 import '../../widget/onboarding/slider_widget.dart';
@@ -86,7 +89,7 @@ class OnboardingThree extends GetView<OnBoardingControllerImp> {
                               const Spacer(),
                               NextButtomWidget(
                                 onTap: () {
-                                  // Get.to(OnBoardinTow());
+                                  Get.to(NavBar());
                                 },
                               ),
                             ],
