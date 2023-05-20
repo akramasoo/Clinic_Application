@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
-
+import 'package:carehealth/View/Pages/Trainer/paymentCompleted.dart';
+import 'package:carehealth/View/Pages/home_page/HomePage.dart';
+import 'package:carehealth/routes/routes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
