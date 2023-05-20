@@ -1,9 +1,5 @@
 # clinic_app
 
-8888
-
-يييييي
-
 A new Flutter project.
 
 ## Getting Started
