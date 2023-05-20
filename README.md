@@ -17,9 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-<<<<<<< HEAD
-aaaaaa
-
-88888
-=======
->>>>>>> ddc0ea2c54043719e68bbde219aa7547fdf24f04
+8888
