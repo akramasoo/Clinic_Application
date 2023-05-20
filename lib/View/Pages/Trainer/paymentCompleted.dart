@@ -3,7 +3,6 @@
 import 'package:carehealth/View/Pages/home_page/navBar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import '../../../constatnt/color_app.dart';
 import '../../../constatnt/font_app_styles.dart';
 import '../../../constatnt/image_app.dart';

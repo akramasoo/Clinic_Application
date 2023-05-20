@@ -43,15 +43,20 @@ class _AddNewState extends State<AddNew> {
                   child: Container(
                     child: Row(
                       children: [
-                        Container(
-                          height: 32,
-                          width: 32,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: ColorApp.blackColor,
+                        InkWell(
+                          onTap: () {
+                            Get.back();
+                          },
+                          child: Container(
+                            height: 32,
+                            width: 32,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: ColorApp.blackColor,
+                            ),
+                            child: Icon(Icons.arrow_back_ios_new_outlined,
+                                size: 19, color: Colors.white),
                           ),
-                          child: Icon(Icons.arrow_back_ios_new_outlined,
-                              size: 19, color: Colors.white),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 45),
