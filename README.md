@@ -1,7 +1,6 @@
 # clinic_app
-7777777777777777777777
+6666666
 
-999999
 
 A new Flutter project.
 
