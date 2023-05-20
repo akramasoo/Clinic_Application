@@ -1,11 +1,15 @@
-// ignore_for_file: prefer_typing_uninitialized_variables, depend_on_referenced_packages, unused_import, file_names, prefer_const_constructors, unnecessary_brace_in_string_interps, avoid_print, camel_case_types
+// ignore_for_file: prefer_typing_uninitialized_variables, depend_on_referenced_packages, unused_import, file_names, prefer_const_constructors, unnecessary_brace_in_string_interps, avoid_print, camel_case_types, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
 
 import '../../../constatnt/color_app.dart';
 import '../../../controller/homeController.dart';
+import '../../Pages/home_page/Book_Now.dart';
+import '../../Pages/home_page/Speed_Dial.dart';
+import '../../Pages/review/trainerDetailPage.dart';
 
 class NewCardDoctorWidget extends StatelessWidget {
   final name;
@@ -34,7 +38,7 @@ class NewCardDoctorWidget extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-              color: Colors.black.withOpacity(0.2),
+              color: Colors.transparent,
               blurRadius: 3.0,
               offset: Offset(0.0, 5.0))
         ],
@@ -129,98 +133,103 @@ class NewCardDoctorWidgetThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    return Container(
-      margin: EdgeInsets.only(bottom: 10.0),
-      height: 105,
-      width: screenWidth,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15.0),
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              blurRadius: 3.0,
-              offset: Offset(0.0, 5.0))
-        ],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Container(
-              height: 95,
-              width: 95,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              child: Image.asset('assets/images/Image3.png')),
-          Container(
-            margin: EdgeInsets.only(bottom: 25.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      'Dr: $name',
-                      style: TextStyle(
-                          color: ColorApp.blackColor,
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    SizedBox(
-                      width: 10.0,
-                    ),
-                    Container(
-                      height: 16.0,
-                      width: 33.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.0),
-                        color: ColorApp.blackBlueColor2,
+    return InkWell(
+      onTap: () {
+        Get.to(TrainerDetail());
+      },
+      child: Container(
+        margin: EdgeInsets.only(bottom: 10.0),
+        height: 105,
+        width: screenWidth,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15.0),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+                color: Colors.transparent,
+                blurRadius: 3.0,
+                offset: Offset(0.0, 5.0))
+          ],
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+                height: 95,
+                width: 95,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: Image.asset('assets/images/Image3.png')),
+            Container(
+              margin: EdgeInsets.only(bottom: 25.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'Dr: $name',
+                        style: TextStyle(
+                            color: ColorApp.blackColor,
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.w600),
                       ),
-                      child: Center(
-                        child: Text(
-                          '4.3',
-                          style: TextStyle(
-                              color: ColorApp.backgroundWhaitColor,
-                              fontSize: 12.0,
-                              fontWeight: FontWeight.w400),
+                      SizedBox(
+                        width: 10.0,
+                      ),
+                      Container(
+                        height: 16.0,
+                        width: 33.0,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5.0),
+                          color: ColorApp.blackBlueColor2,
+                        ),
+                        child: Center(
+                          child: Text(
+                            '4.3',
+                            style: TextStyle(
+                                color: ColorApp.backgroundWhaitColor,
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.w400),
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                Text(
-                  title,
-                  style: TextStyle(
-                      color: ColorApp.greenColor3,
-                      fontSize: 11.0,
-                      fontWeight: FontWeight.w400),
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Text(
-                  title,
-                  style: TextStyle(
-                      color: ColorApp.greenColor3,
-                      fontSize: 11.0,
-                      fontWeight: FontWeight.w400),
-                ),
-              ],
+                    ],
+                  ),
+                  Text(
+                    title,
+                    style: TextStyle(
+                        color: ColorApp.greenColor3,
+                        fontSize: 11.0,
+                        fontWeight: FontWeight.w400),
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Text(
+                    title,
+                    style: TextStyle(
+                        color: ColorApp.greenColor3,
+                        fontSize: 11.0,
+                        fontWeight: FontWeight.w400),
+                  ),
+                ],
+              ),
             ),
-          ),
-          SizedBox(
-            width: 50.0,
-          ),
-          SizedBox(),
-          InkWell(
-              onTap: () {},
-              child: Icon(
-                Icons.arrow_forward_ios,
-                color: Colors.black,
-              )),
-        ],
+            SizedBox(
+              width: 50.0,
+            ),
+            SizedBox(),
+            InkWell(
+                onTap: () {},
+                child: Icon(
+                  Icons.arrow_forward_ios,
+                  color: Colors.black,
+                )),
+          ],
+        ),
       ),
     );
   }
@@ -256,10 +265,9 @@ class NewCardDoctorWidgetTwo extends StatelessWidget {
       width: screenWidth,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15.0),
-        color: Colors.white,
         boxShadow: [
           BoxShadow(
-              color: Colors.black.withOpacity(0.2),
+              color: Colors.transparent,
               blurRadius: 3.0,
               offset: Offset(0.0, 5.0))
         ],
@@ -391,7 +399,7 @@ class NewCardDoctorWidgetTwo_1 extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-              color: Colors.black.withOpacity(0.2),
+              color: Colors.transparent,
               blurRadius: 3.0,
               offset: Offset(0.0, 5.0))
         ],
@@ -484,7 +492,7 @@ class NewCardDoctorWidgetTwo_1 extends StatelessWidget {
                   ),
                   child: InkWell(
                       onTap: () {
-                        // ================================= Check Navigator ==========================
+                        Get.to(Book_Now());
                       },
                       child: Center(
                           child: Text(

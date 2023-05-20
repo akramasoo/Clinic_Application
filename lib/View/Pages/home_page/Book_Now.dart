@@ -10,7 +10,7 @@ import '../../widget/homePage/divider.dart';
 import '../../widget/homePage/listControllerWidget.dart';
 import '../../widget/homePage/list_View.dart';
 
-class HomePage18_3 extends StatelessWidget {
+class Book_Now extends StatelessWidget {
   dynamic name_controller = 'Sophia !';
   dynamic search_controller = TextEditingController();
   dynamic select_name = 'Dr. Blessing';
@@ -255,7 +255,10 @@ class HomePage18_3 extends StatelessWidget {
 
                   Padding(
                     padding: const EdgeInsets.only(top: 66, bottom: 50),
-                    child: C_Button(name_text: 'book now'),
+                    child: C_Button(
+                      name_text: 'book now',
+                      onTap: () {},
+                    ),
                   ),
                 ],
               ),

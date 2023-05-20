@@ -2,10 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../../constatnt/image_app.dart';
+import '../../../main.dart';
 import '../../widget/login/container.dart';
 import '../../widget/login/mytext_field.dart';
 import '../Trainer/paymentCompleted.dart';
+import '../home_page/navBar.dart';
 import 'create_accounts.dart';
 import 'forgot_password.dart';
 
@@ -113,11 +117,7 @@ class _LoginState extends State<Login> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Forgot_Password()),
-                                );
+                                Get.to(Forgot_Password());
                               },
                               child: Text(
                                 'Forgot Password?',
@@ -141,10 +141,16 @@ class _LoginState extends State<Login> {
                                   builder: (context) => PaymentCompleted()),
                             );
                           },
-                          child: Container_wed(
-                            color: Color(0xff022939),
-                            text: 'Login',
-                            fontSize: 22,
+                          child: InkWell(
+                            onTap: () {
+                              sharedPref!.setString('id', '1');
+                              Get.off(NavBar());
+                            },
+                            child: Container_wed(
+                              color: Color(0xff022939),
+                              text: 'Login',
+                              fontSize: 22,
+                            ),
                           ),
                         ),
                         SizedBox(
@@ -254,12 +260,17 @@ class _LoginState extends State<Login> {
                                       builder: (context) => Create_Accounts()),
                                 );
                               },
-                              child: Text('Register!',
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 14,
-                                      fontFamily: 'Switzer',
-                                      fontWeight: FontWeight.bold)),
+                              child: InkWell(
+                                onTap: () {
+                                  Get.to(Create_Accounts());
+                                },
+                                child: Text('Register!',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 14,
+                                        fontFamily: 'Switzer',
+                                        fontWeight: FontWeight.bold)),
+                              ),
                             ),
                           ],
                         )

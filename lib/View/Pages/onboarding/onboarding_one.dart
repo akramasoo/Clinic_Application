@@ -40,12 +40,15 @@ class OnboardingOne extends GetView<OnBoardingControllerImp> {
               child: Container(
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(0),
-                      child: Container(
-                        height: 350,
-                        width: double.infinity,
-                        child: Image.asset(ImagesApp.onboardingOne),
+                    Expanded(
+                      flex: 3,
+                      child: Padding(
+                        padding: const EdgeInsets.all(0),
+                        child: Container(
+                          height: 350,
+                          width: double.infinity,
+                          child: Image.asset(ImagesApp.onboardingOne),
+                        ),
                       ),
                     ),
                     Padding(

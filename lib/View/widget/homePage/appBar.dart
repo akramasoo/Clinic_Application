@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors, non_constant_identifier_names, sized_box_for_whitespace, unnecessary_brace_in_string_interps, file_names
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../constatnt/color_app.dart';
 import '../../../constatnt/font_app_styles.dart';
+import '../../Pages/drawers/notifications_drawer.dart';
 import 'Custom_Text_Filed.dart';
 
 AppBar C_AppBar(
@@ -44,33 +46,38 @@ AppBar C_AppBar(
                                   color: ColorApp.blackColor2,
                                   fontWeight: FontWeight.w500),
                             ),
-                            Container(
-                              height: 20,
-                              width: 20,
-                              child: Center(
-                                child: Stack(
-                                  children: [
-                                    Positioned(
-                                      child: Icon(
-                                        Icons.notifications,
-                                        color: ColorApp.blackColor,
-                                        // size: 26,
+                            InkWell(
+                              onTap: () {
+                                Get.to(Notifications_Drawer());
+                              },
+                              child: Container(
+                                height: 20,
+                                width: 20,
+                                child: Center(
+                                  child: Stack(
+                                    children: [
+                                      Positioned(
+                                        child: Icon(
+                                          Icons.notifications,
+                                          color: ColorApp.blackColor,
+                                          // size: 26,
+                                        ),
                                       ),
-                                    ),
-                                    Positioned(
-                                      top: 5,
-                                      right: 3,
-                                      child: Container(
-                                        height: 5,
-                                        width: 5,
-                                        decoration: BoxDecoration(
-                                            color: ColorApp
-                                                .backgroundonBoardingTghree,
-                                            borderRadius:
-                                                BorderRadius.circular(20)),
-                                      ),
-                                    )
-                                  ],
+                                      Positioned(
+                                        top: 5,
+                                        right: 3,
+                                        child: Container(
+                                          height: 5,
+                                          width: 5,
+                                          decoration: BoxDecoration(
+                                              color: ColorApp
+                                                  .backgroundonBoardingTghree,
+                                              borderRadius:
+                                                  BorderRadius.circular(20)),
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),

@@ -1,16 +1,23 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
+import 'package:carehealth/View/Pages/home_page/HomePage.dart';
 import 'package:carehealth/routes/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
+import 'View/Pages/home_page/Favourite.dart';
+import 'View/Pages/home_page/speed_Dial.dart';
+import 'View/Pages/home_page/Book_Now.dart';
+import 'View/Pages/profile/profile.dart';
 import 'constatnt/color_app.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(
-    const MyApp(),
-  );
+SharedPreferences? sharedPref;
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  sharedPref = await SharedPreferences.getInstance();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -41,8 +48,9 @@ class MyApp extends StatelessWidget {
       title: 'Clinic_app',
       color: ColorApp.backgroundYallowColor,
       //
-      getPages: AppPage.routes,
-      initialRoute: AppPage.getBoarding_Start(),
+      // getPages: AppPage.routes,
+      // initialRoute: AppPage.getBoarding_Start(),
+      home: Favourite(),
     );
   }
 }

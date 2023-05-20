@@ -47,9 +47,9 @@ class Bottom_1Widget extends StatelessWidget {
 
 // Akram -------------------------------------------------------------
 
-Widget C_Button({required name_text}) {
+Widget C_Button({required name_text, onTap}) {
   return InkWell(
-    onTap: () {},
+    onTap: onTap,
     child: Container(
       height: 51,
       width: double.infinity,

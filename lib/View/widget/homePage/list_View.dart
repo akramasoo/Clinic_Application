@@ -2,7 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../../constatnt/color_app.dart';
+import '../../Pages/review/trainerDetailPage.dart';
 
 //======Akram Page- 1 =========================================================
 
@@ -10,26 +13,31 @@ Widget list_V_1({
   required String? name,
   required dynamic name_image,
 }) {
-  return Padding(
-    padding: const EdgeInsets.only(right: 10),
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        CircleAvatar(
-          radius: 28,
-          child: Image.asset('assets/images/$name_image'),
-        ),
-        SizedBox(height: 10),
-        Text(
-          '$name',
-          style: TextStyle(
-              color: ColorApp.blackColor,
-              fontFamily: 'Switzer',
-              fontWeight: FontWeight.w500,
-              fontSize: 12),
-        ),
-      ],
+  return InkWell(
+    onTap: () {
+      Get.to(TrainerDetail());
+    },
+    child: Padding(
+      padding: const EdgeInsets.only(right: 10),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          CircleAvatar(
+            radius: 28,
+            child: Image.asset('assets/images/$name_image'),
+          ),
+          SizedBox(height: 10),
+          Text(
+            '$name',
+            style: TextStyle(
+                color: ColorApp.blackColor,
+                fontFamily: 'Switzer',
+                fontWeight: FontWeight.w500,
+                fontSize: 12),
+          ),
+        ],
+      ),
     ),
   );
 }
@@ -41,89 +49,94 @@ Widget grid_V_2(
     required dynamic min,
     required String? beginner,
     required dynamic color}) {
-  return Padding(
-    padding: const EdgeInsets.only(right: 20),
-    child: Container(
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Container(
-                width: 91,
-                height: 91,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(13),
-                  color: color,
-                  image: DecorationImage(
-                    image: ExactAssetImage('assets/images/a6.png'),
-                    fit: BoxFit.cover,
+  return InkWell(
+    onTap: () {
+      Get.to(TrainerDetail());
+    },
+    child: Padding(
+      padding: const EdgeInsets.only(right: 20),
+      child: Container(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Container(
+                  width: 91,
+                  height: 91,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(13),
+                    color: color,
+                    image: DecorationImage(
+                      image: ExactAssetImage('assets/images/a6.png'),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(width: 10),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    '$name',
-                    style: TextStyle(
-                        color: ColorApp.blackColor,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 12),
-                  ),
-                  SizedBox(height: 30),
-                  Row(
-                    children: [
-                      Icon(Icons.alarm,
-                          size: 19, color: ColorApp.backgrounOnBoardingTow),
-                      Text(
-                        '$kcal',
-                        style: TextStyle(
-                            color: ColorApp.blackColor,
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.w500,
-                            fontSize: 10),
-                      ),
-                      SizedBox(width: 4),
-                      Text(
-                        '|',
-                        style: TextStyle(
-                            color: ColorApp.blackColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 13),
-                      ),
-                      SizedBox(width: 9),
-                      Icon(Icons.alarm,
-                          size: 19, color: ColorApp.backgrounOnBoardingTow),
-                      Text(
-                        ' $min',
-                        style: TextStyle(
-                            color: ColorApp.blackColor,
-                            fontFamily: 'Montserrat',
-                            fontWeight: FontWeight.w500,
-                            fontSize: 10),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    '$beginner',
-                    style: TextStyle(
-                        color: ColorApp.blackColor,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.w500,
-                        fontSize: 10),
-                  ),
-                ],
-              )
-            ],
-          ),
-          SizedBox(height: 10),
-          Divider(color: Colors.grey, thickness: 1),
-          SizedBox(height: 10),
-        ],
+                SizedBox(width: 10),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      '$name',
+                      style: TextStyle(
+                          color: ColorApp.blackColor,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 12),
+                    ),
+                    SizedBox(height: 30),
+                    Row(
+                      children: [
+                        Icon(Icons.alarm,
+                            size: 19, color: ColorApp.backgrounOnBoardingTow),
+                        Text(
+                          '$kcal',
+                          style: TextStyle(
+                              color: ColorApp.blackColor,
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 10),
+                        ),
+                        SizedBox(width: 4),
+                        Text(
+                          '|',
+                          style: TextStyle(
+                              color: ColorApp.blackColor,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13),
+                        ),
+                        SizedBox(width: 9),
+                        Icon(Icons.alarm,
+                            size: 19, color: ColorApp.backgrounOnBoardingTow),
+                        Text(
+                          ' $min',
+                          style: TextStyle(
+                              color: ColorApp.blackColor,
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 10),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      '$beginner',
+                      style: TextStyle(
+                          color: ColorApp.blackColor,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 10),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            SizedBox(height: 10),
+            Divider(color: Colors.grey, thickness: 1),
+            SizedBox(height: 10),
+          ],
+        ),
       ),
     ),
   );

@@ -2,8 +2,11 @@
 
 import 'package:carehealth/View/Pages/accounts/verify_account.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../widget/login/container.dart';
 import '../../widget/login/mytext_field.dart';
+import '../home_page/navBar.dart';
 
 class Forgot_Password extends StatefulWidget {
   const Forgot_Password({super.key});
@@ -82,10 +85,7 @@ class _Forgot_PasswordState extends State<Forgot_Password> {
                 ),
                 GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Verify()),
-                      );
+                      Get.to(Verify());
                     },
                     child: Container_wed(
                       color: Color(0xff022939),

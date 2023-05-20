@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:carehealth/View/Pages/accounts/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
 import '../review/write__review.dart';
@@ -86,10 +89,7 @@ class _VerifyState extends State<Verify> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Review()),
-                          );
+                          Get.to(Login());
                         },
                         child: Container(
                           height: 60,

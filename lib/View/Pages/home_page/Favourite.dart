@@ -8,7 +8,7 @@ import '../../widget/homePage/divider.dart';
 import '../../widget/homePage/listControllerWidget.dart';
 import '../../widget/homePage/textBox.dart';
 
-class HomePage_18_4 extends StatelessWidget {
+class Favourite extends StatelessWidget {
   dynamic name_controller = 'Sophia !';
   dynamic search_controller = TextEditingController();
 

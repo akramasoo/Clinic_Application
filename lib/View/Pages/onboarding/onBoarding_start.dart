@@ -41,53 +41,59 @@ class OnBoardingStart extends GetView<OnBoardingControllerImp> {
             child: Container(
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        top: 0, right: 5, left: 15, bottom: 0),
-                    child: Container(
-                      height: 400,
-                      width: double.infinity,
-                      child: Image.asset(ImagesApp.onboardingStart),
-                      // SvgPicture.asset(ImagesApp.onBoarding2),
+                  Expanded(
+                    flex: 1,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          top: 0, right: 5, left: 15, bottom: 0),
+                      child: Container(
+                        height: 100,
+                        width: double.infinity,
+                        child: Image.asset(ImagesApp.onboardingStart),
+                        // SvgPicture.asset(ImagesApp.onBoarding2),
+                      ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Text(
-                              "Pro ",
-                              style: Styles.textStyle40black,
-                            ),
-                            Text(
-                              "Doctors",
-                              style: Styles.textStyle40green,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        const Text(
-                          "Run the medical center \n professionally",
-                          textAlign: TextAlign.center,
-                          style: Styles.textStyle18black,
-                        ),
-                        const SizedBox(
-                          height: 25,
-                        ),
-                        CustomBottumOnBoarding(
-                          onPressed: () {
-                            Get.to(const OnBoarding());
-                          },
-                          textTitle: ('Lets Start'),
-                          color: ColorApp.primaryColor,
-                        ),
-                      ],
+                  Expanded(
+                    flex: 1,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Text(
+                                "Pro ",
+                                style: Styles.textStyle40black,
+                              ),
+                              Text(
+                                "Doctors",
+                                style: Styles.textStyle40green,
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          const Text(
+                            "Run the medical center \n professionally",
+                            textAlign: TextAlign.center,
+                            style: Styles.textStyle18black,
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          CustomBottumOnBoarding(
+                            onPressed: () {
+                              Get.to(const OnBoarding());
+                            },
+                            textTitle: ('Lets Start'),
+                            color: ColorApp.primaryColor,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],

@@ -2,8 +2,11 @@
 
 import 'package:carehealth/constatnt/image_app.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import '../../widget/accounts/container.dart';
 import '../../widget/accounts/mytext_field.dart';
+import 'login_page.dart';
 
 class Create_Accounts extends StatefulWidget {
   const Create_Accounts({super.key});
@@ -118,10 +121,15 @@ class _Create_AccountsState extends State<Create_Accounts> {
                         SizedBox(
                           height: 43,
                         ),
-                        Container_wed(
-                          color: Color(0xff022939),
-                          fontSize: 22,
-                          text: 'Create Account',
+                        InkWell(
+                          onTap: () {
+                            Get.to(Login());
+                          },
+                          child: Container_wed(
+                            color: Color(0xff022939),
+                            fontSize: 22,
+                            text: 'Create Account',
+                          ),
                         ),
                         SizedBox(
                           height: 47,
@@ -222,12 +230,17 @@ class _Create_AccountsState extends State<Create_Accounts> {
                                   fontSize: 14,
                                   fontFamily: 'Switzer',
                                 )),
-                            Text('Login!',
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 14,
-                                    fontFamily: 'Switzer',
-                                    fontWeight: FontWeight.bold)),
+                            InkWell(
+                              onTap: () {
+                                Get.to(Login());
+                              },
+                              child: Text('Login!',
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 14,
+                                      fontFamily: 'Switzer',
+                                      fontWeight: FontWeight.bold)),
+                            ),
                           ],
                         )
                       ],

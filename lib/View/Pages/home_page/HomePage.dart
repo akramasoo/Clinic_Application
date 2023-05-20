@@ -16,8 +16,10 @@ import '../../widget/homePage/listControllerWidget.dart';
 import '../../widget/homePage/list_View.dart';
 import '../../widget/homePage/textBox.dart';
 import '../drawers/my_drawer_header.dart';
+import '../review/trainerDetailPage.dart';
+import 'Book_Now.dart';
 
-class HomePage18_1 extends StatelessWidget {
+class HomePage extends StatelessWidget {
   dynamic name_controller = 'Sophia !';
   dynamic book_1_controller = 'Medical Centers';
   dynamic book_2_controller = 'treatment centres';
@@ -119,28 +121,7 @@ class HomePage18_1 extends StatelessWidget {
                                                 ),
                                               ),
                                               SizedBox(
-                                                height: 5,
-                                              ),
-                                              Container(
-                                                height: 27.5,
-                                                width: 110,
-                                                decoration: BoxDecoration(
-                                                  color: ColorApp.blackColor2,
-                                                  borderRadius:
-                                                      BorderRadius.circular(8),
-                                                ),
-                                                child: Center(
-                                                  child: Text(
-                                                    "Book Now",
-                                                    style: C_TextStyle(
-                                                      size: 14,
-                                                      color:
-                                                          ColorApp.whiteColor,
-                                                      fontWeight:
-                                                          FontWeight.w700,
-                                                    ),
-                                                  ),
-                                                ),
+                                                height: 30,
                                               ),
                                             ],
                                           ),
@@ -186,31 +167,36 @@ class HomePage18_1 extends StatelessWidget {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
                                             children: [
-                                              Container(
-                                                child: Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.end,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.end,
-                                                  children: [
-                                                    Container(
-                                                      height: 42.18,
-                                                      width: 200.37,
-                                                      padding: EdgeInsets.only(
-                                                          left: 10),
-                                                      child: Column(
-                                                        children: [],
+                                              InkWell(
+                                                onTap: () {
+                                                  Get.to(Book_Now());
+                                                },
+                                                child: Container(
+                                                  height: 27.5,
+                                                  width: 110,
+                                                  decoration: BoxDecoration(
+                                                    color: ColorApp.blackColor2,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8),
+                                                  ),
+                                                  child: Center(
+                                                    child: Text(
+                                                      "Book Now",
+                                                      style: C_TextStyle(
+                                                        size: 14,
+                                                        color:
+                                                            ColorApp.whiteColor,
+                                                        fontWeight:
+                                                            FontWeight.w700,
                                                       ),
                                                     ),
-                                                  ],
+                                                  ),
                                                 ),
                                               ),
-                                              SizedBox(
-                                                height: 18,
-                                              ),
                                               Container(
-                                                height: 73.5,
-                                                width: 73.5,
+                                                height: 70,
+                                                width: 70,
                                                 child: Image.asset(
                                                   ImagesApp.mdcl,
                                                 ),
@@ -438,35 +424,40 @@ class HomePage18_1 extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 13, bottom: 14),
-                          child: Container(
-                            height: 155,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              image: DecorationImage(
-                                image: ExactAssetImage(ImagesApp.Popular),
-                                fit: BoxFit.cover,
+                        InkWell(
+                          onTap: () {
+                            Get.to(TrainerDetail());
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 13, bottom: 14),
+                            child: Container(
+                              height: 155,
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(16),
+                                image: DecorationImage(
+                                  image: ExactAssetImage(ImagesApp.Popular),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
-                            ),
-                            child: Stack(
-                              children: [
-                                Positioned(
-                                  right: 20,
-                                  top: 25,
-                                  child: Container(
-                                    height: 40,
-                                    width: 40,
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(12)),
-                                    child: Icon(Icons.heart_broken,
-                                        size: 19, color: Colors.red),
-                                  ),
-                                )
-                              ],
+                              child: Stack(
+                                children: [
+                                  Positioned(
+                                    right: 20,
+                                    top: 25,
+                                    child: Container(
+                                      height: 40,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(12)),
+                                      child: Icon(Icons.heart_broken,
+                                          size: 19, color: Colors.red),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -520,34 +511,39 @@ class HomePage18_1 extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 24),
-                    child: Container(
-                      height: 155,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16),
-                        image: DecorationImage(
-                          image: ExactAssetImage(ImagesApp.Popular),
-                          fit: BoxFit.cover,
+                  InkWell(
+                    onTap: () {
+                      Get.to(TrainerDetail());
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 24),
+                      child: Container(
+                        height: 155,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16),
+                          image: DecorationImage(
+                            image: ExactAssetImage(ImagesApp.Popular),
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      ),
-                      child: Stack(
-                        children: [
-                          Positioned(
-                            right: 20,
-                            top: 25,
-                            child: Container(
-                              height: 40,
-                              width: 40,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(12)),
-                              child: Icon(Icons.heart_broken,
-                                  size: 19, color: Colors.red),
-                            ),
-                          )
-                        ],
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              right: 20,
+                              top: 25,
+                              child: Container(
+                                height: 40,
+                                width: 40,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(12)),
+                                child: Icon(Icons.heart_broken,
+                                    size: 19, color: Colors.red),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -586,33 +582,39 @@ class HomePage18_1 extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Container(
-                          height: 155,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(16),
-                            color: Colors.amber,
-                            image: DecorationImage(
-                              image: ExactAssetImage(ImagesApp.Popular),
-                              fit: BoxFit.cover,
+                        InkWell(
+                          onTap: () {
+                            Get.to(TrainerDetail());
+                          },
+                          child: Container(
+                            height: 155,
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              color: Colors.amber,
+                              image: DecorationImage(
+                                image: ExactAssetImage(ImagesApp.Popular),
+                                fit: BoxFit.cover,
+                              ),
                             ),
-                          ),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: 20,
-                                top: 25,
-                                child: Container(
-                                  height: 40,
-                                  width: 40,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(12)),
-                                  child: Icon(Icons.heart_broken,
-                                      size: 19, color: Colors.red),
-                                ),
-                              )
-                            ],
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  right: 20,
+                                  top: 25,
+                                  child: Container(
+                                    height: 40,
+                                    width: 40,
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius:
+                                            BorderRadius.circular(12)),
+                                    child: Icon(Icons.heart_broken,
+                                        size: 19, color: Colors.red),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         SizedBox(height: 15),
@@ -649,33 +651,38 @@ class HomePage18_1 extends StatelessWidget {
                         ),
                         Column(
                           children: [
-                            Container(
-                              height: 155,
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                image: DecorationImage(
-                                  image: ExactAssetImage(ImagesApp.Popular),
-                                  fit: BoxFit.cover,
+                            InkWell(
+                              onTap: () {
+                                Get.to(TrainerDetail());
+                              },
+                              child: Container(
+                                height: 155,
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(16),
+                                  image: DecorationImage(
+                                    image: ExactAssetImage(ImagesApp.Popular),
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              ),
-                              child: Stack(
-                                children: [
-                                  Positioned(
-                                    right: 20,
-                                    top: 25,
-                                    child: Container(
-                                      height: 40,
-                                      width: 40,
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(12)),
-                                      child: Icon(Icons.heart_broken,
-                                          size: 19, color: Colors.red),
-                                    ),
-                                  )
-                                ],
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      right: 20,
+                                      top: 25,
+                                      child: Container(
+                                        height: 40,
+                                        width: 40,
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(12)),
+                                        child: Icon(Icons.heart_broken,
+                                            size: 19, color: Colors.red),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                             SizedBox(height: 11),
@@ -716,7 +723,7 @@ class HomePage18_1 extends StatelessWidget {
                   // The best doctors  --------------------------------------------------------------
 
                   Padding(
-                    padding: const EdgeInsets.only(top: 21, bottom: 12),
+                    padding: const EdgeInsets.only(top: 21, bottom: 28),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -741,7 +748,7 @@ class HomePage18_1 extends StatelessWidget {
                   ),
 
                   Container(
-                    height: 396,
+                    height: 370,
                     width: double.infinity,
                     child: ListView.builder(
                       scrollDirection: Axis.vertical,

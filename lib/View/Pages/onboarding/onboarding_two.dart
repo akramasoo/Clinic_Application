@@ -38,17 +38,20 @@ class OnboardingTwo extends GetView<OnBoardingControllerImp> {
                 child: Container(
                   child: Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 0, right: 0, left: 0, bottom: 0),
-                        child: Container(
-                          height: 350,
-                          child: Image.asset("assets/images/three.png"),
-                          // SvgPicture.asset(
-                          //    ImagesApp.onBoarding3,
-                          //    height: 450.0,
-                          //    width: double.infinity,
-                          //  ),
+                      Expanded(
+                        flex: 3,
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              top: 0, right: 0, left: 0, bottom: 0),
+                          child: Container(
+                            height: 350,
+                            child: Image.asset("assets/images/three.png"),
+                            // SvgPicture.asset(
+                            //    ImagesApp.onBoarding3,
+                            //    height: 450.0,
+                            //    width: double.infinity,
+                            //  ),
+                          ),
                         ),
                       ),
                       Padding(

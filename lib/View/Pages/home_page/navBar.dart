@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../constatnt/color_app.dart';
 import '../../../controller/navigatorTabBarController.dart';
+import '../profile/profile.dart';
 import '../review/appSettingPage.dart';
 import '../review/reviewsPage.dart';
-import '../review/trainerDetailPage.dart';
-import 'homePage18_1.dart';
-import 'homePage18_4.dart';
+import 'HomePage.dart';
+import 'Favourite.dart';
+import 'Speed_Dial.dart';
 
 class NavBar extends StatelessWidget {
   NavBar({super.key});
@@ -20,14 +21,15 @@ class NavBar extends StatelessWidget {
     return GetBuilder<NavTabBarController>(
       builder: (controller) {
         return Scaffold(
+          backgroundColor: Colors.transparent,
           body: IndexedStack(
             index: controller.tabIndex,
             children: [
-              HomePage18_1(),
+              HomePage(),
               AppSetting(),
-              Reviews(),
-              TrainerDetail(),
-              HomePage_18_4(),
+              Speed_Dial(),
+              Favourite(),
+              Profile()
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
@@ -44,9 +46,9 @@ class NavBar extends StatelessWidget {
             items: [
               _bottomBarItem(Icons.home, ''),
               _bottomBarItem(Icons.settings, ''),
-              _bottomBarItem(Icons.video_chat_outlined, ''),
-              _bottomBarItem(Icons.dashboard, ''),
-              _bottomBarItem(Icons.person_pin_outlined, ''),
+              _bottomBarItem(Icons.add, ''),
+              _bottomBarItem(Icons.favorite_outline, ''),
+              _bottomBarItem(Icons.person, ''),
             ],
           ),
         );

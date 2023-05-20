@@ -1,10 +1,11 @@
-// ignore_for_file: depend_on_referenced_packages, file_names, prefer_typing_uninitialized_variables, prefer_const_constructors, sized_box_for_whitespace, avoid_print, camel_case_types, avoid_unnecessary_containers
+// ignore_for_file: depend_on_referenced_packages, file_names, prefer_typing_uninitialized_variables, prefer_const_constructors, sized_box_for_whitespace, avoid_print, camel_case_types, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 import '../../../constatnt/color_app.dart';
 import '../../../controller/homeController.dart';
+import '../../Pages/review/trainerDetailPage.dart';
 
 class NewWidgetBestDoctorOne extends StatelessWidget {
   final dynamic num;
@@ -31,9 +32,9 @@ class NewWidgetBestDoctorOne extends StatelessWidget {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-                color: Colors.black.withOpacity(0.2),
+                color: Colors.transparent,
                 blurRadius: 3.0,
-                offset: Offset(0.0, 5.0))
+                offset: Offset(1.0, 5.0))
           ],
         ),
         child: Column(
@@ -95,7 +96,9 @@ class NewWidgetBestDoctorOne_1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Get.to(TrainerDetail());
+      },
       child: Container(
         margin: EdgeInsets.only(right: 17.0, top: 3.0, bottom: 5.0),
         width: 98,
@@ -105,9 +108,9 @@ class NewWidgetBestDoctorOne_1 extends StatelessWidget {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-                color: Colors.black.withOpacity(0.2),
+                color: Colors.transparent,
                 blurRadius: 3.0,
-                offset: Offset(0.0, 5.0))
+                offset: Offset(1.0, 5.0))
           ],
         ),
         child: Column(
@@ -184,21 +187,21 @@ class NewWidgetBestDoctorTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Get.to(TrainerDetail());
+      },
       child: Container(
         margin: EdgeInsets.only(right: 17.0, top: 3.0, bottom: 5.0),
-
         width: 187,
         height: 263,
-        // color: Colors.amber,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.0),
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-                color: Colors.black.withOpacity(0.2),
+                color: Colors.transparent,
                 blurRadius: 3.0,
-                offset: Offset(0.0, 5.0))
+                offset: Offset(1.0, 5.0))
           ],
         ),
         child: Column(
@@ -255,7 +258,9 @@ class NewWidgetBestDoctorThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Get.to(TrainerDetail());
+      },
       child: Stack(
         children: [
           Container(
@@ -266,9 +271,9 @@ class NewWidgetBestDoctorThree extends StatelessWidget {
               color: Colors.white,
               boxShadow: [
                 BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
+                    color: Colors.transparent,
                     blurRadius: 3.0,
-                    offset: Offset(0.0, 5.0))
+                    offset: Offset(1.0, 5.0))
               ],
             ),
             child: Column(

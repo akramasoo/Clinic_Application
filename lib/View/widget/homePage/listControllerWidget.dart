@@ -1,9 +1,8 @@
-// ignore_for_file: file_names, prefer_const_constructors, camel_case_types, non_constant_identifier_names, sized_box_for_whitespace
+// ignore_for_file: file_names, prefer_const_constructors, camel_case_types, non_constant_identifier_names, sized_box_for_whitespace, unused_local_variable
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../constatnt/color_app.dart';
-
 import '../../../controller/homeController.dart';
 import 'bestDoctor.dart';
 import 'cardDoctor.dart';
@@ -22,10 +21,9 @@ class NewListControllerBestDoctorPopularWidget extends StatelessWidget {
       builder: (controller) {
         return Container(
           margin: EdgeInsets.only(bottom: 30.0),
-
           height: 263,
           width: double.infinity,
-          // color: Colors.grey,
+          color: Colors.transparent,
           child: ListView.builder(
             itemCount: controller.bestDoctorList.length,
             itemBuilder: (context, index) {
@@ -199,6 +197,7 @@ class NewListDoctorControllerCardWidgetThree extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ctrl = Get.lazyPut(() => HomeController());
     return GetBuilder<HomeController>(
       builder: (controller) {
         return Container(
@@ -238,7 +237,6 @@ class NewListControllerBestDoctorTwoWidget extends StatelessWidget {
           color: Colors.transparent,
           height: 263,
           width: double.infinity,
-          // color: Colors.grey,
           child: ListView.builder(
             itemCount: controller.bestDoctorList.length,
             itemBuilder: (context, index) {
@@ -414,7 +412,7 @@ class NewGridControllerWidget extends StatelessWidget {
         return Container(
             margin: EdgeInsets.symmetric(horizontal: 30.0),
             height: 400.0,
-            width: screenWidth,
+            width: double.infinity,
             child: GridView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: controller.bestDoctorList.length,

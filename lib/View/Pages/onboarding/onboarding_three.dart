@@ -1,6 +1,5 @@
-// ignore_for_file: sized_box_for_whitespace, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, unused_import
+// ignore_for_file: sized_box_for_whitespace, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, unused_import, prefer_const_constructors
 
-import 'package:carehealth/View/Pages/home_page/homePage18_1.dart';
 import 'package:carehealth/View/Pages/home_page/navBar.dart';
 import 'package:carehealth/constatnt/color_app.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +10,7 @@ import '../../../routes/routes.dart';
 import '../../widget/onboarding/next_bottun.dart';
 import '../../widget/onboarding/skip_buttom.dart';
 import '../../widget/onboarding/slider_widget.dart';
+import '../accounts/create_accounts.dart';
 
 class OnboardingThree extends GetView<OnBoardingControllerImp> {
   const OnboardingThree({Key? key}) : super(key: key);
@@ -42,16 +42,19 @@ class OnboardingThree extends GetView<OnBoardingControllerImp> {
                 child: Container(
                   child: Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 10, right: 0, left: 200, bottom: 0),
-                        child: Container(
-                            height: 350,
-                            child: Image.asset("assets/images/four.png")),
-                        // SvgPicture.asset(
-                        //   ImagesApp.onBoarding1,
-                        //   height: 150.0,
-                        // ),
+                      Expanded(
+                        flex: 3,
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              top: 10, right: 0, left: 200, bottom: 0),
+                          child: Container(
+                              height: 350,
+                              child: Image.asset("assets/images/four.png")),
+                          // SvgPicture.asset(
+                          //   ImagesApp.onBoarding1,
+                          //   height: 150.0,
+                          // ),
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(15),
@@ -89,7 +92,7 @@ class OnboardingThree extends GetView<OnBoardingControllerImp> {
                               const Spacer(),
                               NextButtomWidget(
                                 onTap: () {
-                                  Get.to(NavBar());
+                                  Get.off(Create_Accounts());
                                 },
                               ),
                             ],
