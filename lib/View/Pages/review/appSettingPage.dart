@@ -141,8 +141,7 @@ class AppSetting extends StatelessWidget {
             ),
             //=====================upgrade ===============================
             Container(
-              margin:
-                  EdgeInsets.only(top: 20, left: 15, right: 15, bottom: 120),
+              margin: EdgeInsets.only(left: 15, right: 15, bottom: 50),
               height: 93,
               width: 317,
               // color: Colors.amber,

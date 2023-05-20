@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, camel_case_types, prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers, unused_import, sized_box_for_whitespace, must_be_immutable, non_constant_identifier_names, unnecessary_brace_in_string_interps
 
+import 'package:carehealth/View/Pages/Trainer/paymentCompleted.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -9,6 +10,7 @@ import '../../../constatnt/image_app.dart';
 import '../../widget/homePage/bottomWidget.dart';
 import '../../widget/homePage/divider.dart';
 import '../../widget/homePage/list_View.dart';
+import 'addNew.dart';
 
 class Payment extends StatelessWidget {
   dynamic name_controller = 'Emily Kevin';
@@ -94,18 +96,23 @@ class Payment extends StatelessWidget {
                                   children: [
                                     Expanded(
                                       flex: 1,
-                                      child: Container(
-                                        height: 115,
-                                        width: 62,
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(13),
-                                          color: Colors.black,
-                                        ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(3),
-                                          child: Icon(Icons.add,
-                                              size: 19, color: Colors.white),
+                                      child: InkWell(
+                                        onTap: () {
+                                          Get.to(AddNew());
+                                        },
+                                        child: Container(
+                                          height: 115,
+                                          width: 62,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(13),
+                                            color: Colors.black,
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(3),
+                                            child: Icon(Icons.add,
+                                                size: 19, color: Colors.white),
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -375,8 +382,12 @@ class Payment extends StatelessWidget {
 
                   Padding(
                     padding:
-                        const EdgeInsets.only(top: 136, bottom: 70, right: 21),
-                    child: C_Button(name_text: 'Confirm'),
+                        const EdgeInsets.only(top: 100, bottom: 70, right: 21),
+                    child: C_Button(
+                        name_text: 'Confirm',
+                        onTap: () {
+                          Get.to(PaymentCompleted());
+                        }),
                   ),
                 ],
               ),

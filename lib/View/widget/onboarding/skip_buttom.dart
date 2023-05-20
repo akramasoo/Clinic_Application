@@ -1,7 +1,9 @@
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../Pages/accounts/create_accounts.dart';
 // import '../../pages/onboarding/center_information.dart';
 //
 // import '../../pages/onboarding/center_information.dart';
@@ -17,7 +19,7 @@ class SkipBottumWidget extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {
-            //  Get.to(CenterInformationPage());
+            Get.off(Create_Accounts());
           },
           child: const Text(
             "Skip",

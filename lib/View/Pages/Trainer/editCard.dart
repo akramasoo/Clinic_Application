@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, camel_case_types, prefer_const_literals_to_create_immutables, prefer_const_constructors, avoid_unnecessary_containers, unused_import, sized_box_for_whitespace, must_be_immutable, unnecessary_new, unnecessary_string_interpolations, non_constant_identifier_names, unnecessary_brace_in_string_interps, file_names
 
+import 'package:carehealth/View/Pages/Trainer/payment.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -389,7 +390,11 @@ class EditCard extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 73, bottom: 70),
-                    child: C_Button(name_text: 'Save'),
+                    child: C_Button(
+                        name_text: 'Save',
+                        onTap: () {
+                          Get.to(Payment());
+                        }),
                   ),
                 ],
               ),

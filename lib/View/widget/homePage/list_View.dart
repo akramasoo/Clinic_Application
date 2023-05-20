@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import '../../../constatnt/color_app.dart';
+import '../../Pages/Trainer/editCard.dart';
 import '../../Pages/review/trainerDetailPage.dart';
 
 //======Akram Page- 1 =========================================================
@@ -230,68 +231,73 @@ Widget grid_V_Payment({
 }) {
   return Padding(
     padding: const EdgeInsets.only(left: 10),
-    child: Container(
-      height: 115,
-      width: 186,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: <Color>[
-              Color.fromARGB(255, 110, 108, 238),
-              Color.fromARGB(255, 123, 121, 249),
-              Color.fromARGB(255, 206, 86, 243),
-              Color.fromARGB(255, 221, 111, 255),
-              Color.fromARGB(255, 189, 112, 212),
-              Color.fromARGB(255, 123, 121, 249),
-              Color.fromARGB(255, 123, 121, 249),
-            ]),
-        borderRadius: BorderRadius.circular(13),
-        color: Color.fromARGB(255, 255, 232, 238),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(5),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  '$name_visa',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22),
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Icon(Icons.keyboard_control, size: 40, color: Colors.black),
-                SizedBox(width: 5),
-                Text(
-                  '$num',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15),
-                ),
-                SizedBox(width: 10),
-                Container(
-                  height: 24,
-                  width: 24,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(9),
-                    color: Colors.white,
+    child: InkWell(
+      onTap: () {
+        Get.to(EditCard());
+      },
+      child: Container(
+        height: 115,
+        width: 186,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: <Color>[
+                Color.fromARGB(255, 110, 108, 238),
+                Color.fromARGB(255, 123, 121, 249),
+                Color.fromARGB(255, 206, 86, 243),
+                Color.fromARGB(255, 221, 111, 255),
+                Color.fromARGB(255, 189, 112, 212),
+                Color.fromARGB(255, 123, 121, 249),
+                Color.fromARGB(255, 123, 121, 249),
+              ]),
+          borderRadius: BorderRadius.circular(13),
+          color: Color.fromARGB(255, 255, 232, 238),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    '$name_visa',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 22),
+                  )
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Icon(Icons.keyboard_control, size: 40, color: Colors.black),
+                  SizedBox(width: 5),
+                  Text(
+                    '$num',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15),
                   ),
-                  child: Icon(Icons.check, size: 20, color: Colors.green),
-                ),
-              ],
-            )
-          ],
+                  SizedBox(width: 10),
+                  Container(
+                    height: 24,
+                    width: 24,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(9),
+                      color: Colors.white,
+                    ),
+                    child: Icon(Icons.check, size: 20, color: Colors.green),
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     ),

@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, camel_case_types, non_constant_identifier_names, prefer_typing_uninitialized_variables, file_names
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../../constatnt/color_app.dart';
+import '../../Pages/Trainer/payment.dart';
 
 class Bottom_1Widget extends StatelessWidget {
   final text;
@@ -18,7 +20,9 @@ class Bottom_1Widget extends StatelessWidget {
       children: [
         Center(
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Get.to(Payment());
+            },
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 20.0),
               height: 55,

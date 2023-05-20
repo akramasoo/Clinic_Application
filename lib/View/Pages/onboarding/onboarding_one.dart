@@ -80,7 +80,7 @@ class OnboardingOne extends GetView<OnBoardingControllerImp> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const SkipBottumWidget(),
+                            SkipBottumWidget(),
                             const Spacer(),
                             const SlidersWidget(),
                             const Spacer(),

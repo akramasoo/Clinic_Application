@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:responsive_framework/responsive_wrapper.dart';
 import 'package:responsive_framework/utils/scroll_behavior.dart';
+import 'View/Pages/Trainer/addNew.dart';
 import 'View/Pages/home_page/Favourite.dart';
 import 'View/Pages/home_page/speed_Dial.dart';
 import 'View/Pages/home_page/Book_Now.dart';
@@ -48,9 +49,9 @@ class MyApp extends StatelessWidget {
       title: 'Clinic_app',
       color: ColorApp.backgroundYallowColor,
       //
-      // getPages: AppPage.routes,
-      // initialRoute: AppPage.getBoarding_Start(),
-      home: Favourite(),
+      getPages: AppPage.routes,
+      initialRoute: AppPage.getBoarding_Start(),
+      // home: AddNew(),
     );
   }
 }

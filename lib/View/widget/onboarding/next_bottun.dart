@@ -4,17 +4,19 @@ import 'package:get/get.dart';
 import '../../../controller/onBoarding_controller.dart';
 
 class NextButtomWidget extends GetView<OnBoardingControllerImp> {
-  const NextButtomWidget({
+  NextButtomWidget({
     Key? key,
     required this.onTap,
   }) : super(key: key);
-  final void Function()? onTap;
+  void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         InkWell(
-          onTap: onTap,
+          onTap: () {
+            controller.nextPage();
+          },
           child: const Text(
             "Next",
             style: TextStyle(
