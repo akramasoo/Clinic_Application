@@ -2,14 +2,14 @@
 import 'package:flutter/material.dart';
 import 'appointment.dart';
 
-class Review extends StatefulWidget {
-  const Review({super.key});
+class WriteReview extends StatefulWidget {
+  const WriteReview({super.key});
 
   @override
-  State<Review> createState() => _ReviewState();
+  State<WriteReview> createState() => _WriteReviewState();
 }
 
-class _ReviewState extends State<Review> {
+class _WriteReviewState extends State<WriteReview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
