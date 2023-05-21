@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, prefer_const_constructors, camel_case_types, non_constant_identifier_names, sized_box_for_whitespace, unused_local_variable
+// ignore_for_file: file_names, prefer_const_constructors, camel_case_types, non_constant_identifier_names, sized_box_for_whitespace, unused_local_variable, prefer_const_constructors_in_immutables, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -206,7 +206,7 @@ class NewListDoctorControllerCardWidgetThree extends StatelessWidget {
           width: screenWidth,
           child: Column(
             children: [
-              for (int i = 0; i <3 ; i++) ...[
+              for (int i = 0; i < 3; i++) ...[
                 NewCardDoctorWidgetThree(
                   name: controller.bestDoctorList[0 + i]['name2'],
                   title: controller.bestDoctorList[0 + i]['title'],
@@ -325,7 +325,7 @@ class NewListControllerBestDoctorWidget_1 extends StatelessWidget {
 
 // =============== List Categories =========================
 class NewListControllerCategoryWidget extends StatelessWidget {
-   NewListControllerCategoryWidget({
+  NewListControllerCategoryWidget({
     super.key,
     required this.screenWidth,
   });
@@ -380,36 +380,40 @@ class NewListControllerCategoryWidget extends StatelessWidget {
 }
 
 class CategoryWidgetBottom extends StatelessWidget {
-   CategoryWidgetBottom({
+  CategoryWidgetBottom({
     super.key,
-    
   });
 
- var isPressed = true.obs;
+  var isPressed = true.obs;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-          isPressed.value = !isPressed.value;
+        isPressed.value = !isPressed.value;
       },
-      child: Obx(() => Container(
-        margin: EdgeInsets.only(left: 5.0),
-        height: 32,
-        width: 90,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5.0),
-          color: isPressed.value ?ColorApp.greyColor: ColorApp.blackBlueColor
-        ),
-        child: Center(
-          child: Text(
-            'Category',
-            style: TextStyle(
-                color:isPressed.value ? ColorApp.greyColor5: ColorApp.whiteColor2,
-                fontSize: 11,
-                fontWeight: FontWeight.w500),
+      child: Obx(
+        () => Container(
+          margin: EdgeInsets.only(left: 5.0),
+          height: 32,
+          width: 90,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5.0),
+              color: isPressed.value
+                  ? ColorApp.greyColor
+                  : ColorApp.blackBlueColor),
+          child: Center(
+            child: Text(
+              'Category',
+              style: TextStyle(
+                  color: isPressed.value
+                      ? ColorApp.greyColor5
+                      : ColorApp.whiteColor2,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w500),
+            ),
           ),
         ),
-      ),),
+      ),
     );
   }
 }

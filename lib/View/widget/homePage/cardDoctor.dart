@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_typing_uninitialized_variables, depend_on_referenced_packages, unused_import, file_names, prefer_const_constructors, unnecessary_brace_in_string_interps, avoid_print, camel_case_types, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_typing_uninitialized_variables, depend_on_referenced_packages, unused_import, file_names, prefer_const_constructors, unnecessary_brace_in_string_interps, avoid_print, camel_case_types, prefer_const_literals_to_create_immutables, must_be_immutable
 
 import 'package:carehealth/View/Pages/home_page/Favourite.dart';
 import 'package:flutter/material.dart';
@@ -141,9 +141,7 @@ class NewCardDoctorWidgetThree extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     return InkWell(
-      onTap: () {
-    
-      },
+      onTap: () {},
       child: Container(
         margin: EdgeInsets.only(bottom: 10.0),
         height: 105,
@@ -231,7 +229,7 @@ class NewCardDoctorWidgetThree extends StatelessWidget {
             SizedBox(),
             InkWell(
                 onTap: () {
-                      Get.to(TrainerDetail());
+                  Get.to(TrainerDetail());
                 },
                 child: Icon(
                   Icons.arrow_forward_ios,
@@ -395,7 +393,7 @@ class NewCardDoctorWidgetTwo_1 extends StatelessWidget {
   });
 
   final HomeController extController = Get.find();
-var isPressed = false.obs;
+  var isPressed = false.obs;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -487,15 +485,17 @@ var isPressed = false.obs;
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 InkWell(
-                    onTap: () {
-                      isPressed.value = !isPressed.value;
-                    },
-                    child: Obx(() => Icon(
-                          isPressed.value ? Icons.favorite : Icons.favorite_border,
-                          color: isPressed.value ? Colors.red : Colors.grey,
-                          size: 16.0,
-                        )),
-                  ),
+                  onTap: () {
+                    isPressed.value = !isPressed.value;
+                  },
+                  child: Obx(() => Icon(
+                        isPressed.value
+                            ? Icons.favorite
+                            : Icons.favorite_border,
+                        color: isPressed.value ? Colors.red : Colors.grey,
+                        size: 16.0,
+                      )),
+                ),
                 Container(
                   height: 41,
                   width: 115,
