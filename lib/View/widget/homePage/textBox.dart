@@ -15,7 +15,7 @@ class NewTextBestDoctorTwoWidget extends StatelessWidget {
     final isDesktop = MediaQuery.of(context).size.width >= 600;
     final isMobile = MediaQuery.of(context).size.width < 600;
     return Container(
-      margin: EdgeInsets.only(top: 21.0, left: 5, right: 5),
+      margin: EdgeInsets.only(top: 21.0, left: 5, right: 20),
       height: 58.0,
       width: double.infinity,
       child: isDesktop

@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, use_key_in_widget_constructors, must_be_immutable
 
+import 'package:carehealth/View/widget/textfield_screen/my_app_bar.dart';
+import 'package:carehealth/View/widget/textfield_screen/my_textfield_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -10,48 +12,26 @@ import '../../widget/textfield_screen/onboarding_text_widget.dart';
 import 'new_products_services.dart';
 
 class NewRequestPage extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
-
+  TextEditingController idRequestController = TextEditingController();
+  TextEditingController selectionClientsController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController serviceDetailsController = TextEditingController();
+  TextEditingController commentsController = TextEditingController();
+  TextEditingController reservationTimeController = TextEditingController();
+  TextEditingController chooseDateController = TextEditingController();
+  TextEditingController selectionController2 = TextEditingController();
+  TextEditingController startingTimeController = TextEditingController();
+  TextEditingController endingTimeController = TextEditingController();
+  TextEditingController supervisingController = TextEditingController();
+  TextEditingController notesController = TextEditingController();
+  String imagePath = 'assets/images/textfield';
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            // ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            ColorApp.greenColor2,
-            ColorApp.greenColor2,
-          ],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-      ),
+    return MyTextFieldContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          foregroundColor: ColorApp.blackColor,
-          leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.keyboard_arrow_left, size: 35),
-          ),
-          elevation: 0.0,
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          title: const Text(
-            'New Request',
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
-                color: ColorApp.blackColor,
-                fontFamily: 'Montserrat'),
-          ),
+        appBar: MyAppBar(
+          title: 'New Request',
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -74,31 +54,39 @@ class NewRequestPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: idRequestController,
                       validator: () {},
                       hintText: '#ID Request',
-                      keyboardType: TextInputType.name,
+                      keyboardType: TextInputType.number,
                       obscureText: false,
+                      suffixIcon: Image.asset('$imagePath/id_section.png',
+                        height: 1,
+                      ),
+
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: selectionClientsController,
                       validator: () {},
                       hintText: 'selection of clients/patients',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Icon(Icons.keyboard_arrow_down),
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: addressController,
                       validator: () {},
                       hintText: 'address of the request',
-                      keyboardType: TextInputType.name,
+                      keyboardType: TextInputType.streetAddress,
                       obscureText: false,
+                      suffixIcon: Image.asset('$imagePath/location.png',
+                        height: 1,
+                      ),
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: serviceDetailsController,
                       validator: () {},
                       hintText: 'Service details',
                       keyboardType: TextInputType.name,
@@ -117,12 +105,20 @@ class NewRequestPage extends StatelessWidget {
                   ),
                   onPressed: () {},
                   child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: OnBoardingTextWidget(
-                        text: 'appointment,booking schedule',
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
+                      // alignment: Alignment.centerLeft,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          OnBoardingTextWidget(
+                            text: 'appointment,booking schedule',
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
+                         Image.asset('$imagePath/date_white.png',
+
+                          ),
+                        ],
                       )),
                 ),
               ),
@@ -132,7 +128,7 @@ class NewRequestPage extends StatelessWidget {
                 child: Column(
                   children: [
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: commentsController,
                       validator: () {},
                       hintText: 'comments',
                       keyboardType: TextInputType.name,
@@ -141,27 +137,32 @@ class NewRequestPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: reservationTimeController,
                       validator: () {},
                       hintText: 'Reservation times',
-                      keyboardType: TextInputType.name,
+                      keyboardType: TextInputType.number,
                       obscureText: false,
+                      suffixIcon: Icon(Icons.keyboard_arrow_down),
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: chooseDateController,
                       validator: () {},
                       hintText: 'Choose the date',
-                      keyboardType: TextInputType.name,
+                      keyboardType: TextInputType.number,
                       obscureText: false,
+                      suffixIcon: Image.asset('$imagePath/date.png',
+                        height: 1,
+                      ),
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: selectionController2,
                       validator: () {},
                       hintText: 'selection of clients/patients',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Icon(Icons.keyboard_arrow_down),
                     ),
                     const SizedBox(height: 15.0),
                     Row(
@@ -169,10 +170,10 @@ class NewRequestPage extends StatelessWidget {
                         Expanded(
                           flex: 5,
                           child: OnBoardingTextFormField(
-                            controller: nameController,
+                            controller: startingTimeController,
                             validator: () {},
                             hintText: 'Starting time',
-                            keyboardType: TextInputType.name,
+                            keyboardType: TextInputType.number,
                             obscureText: false,
                           ),
                         ),
@@ -182,10 +183,10 @@ class NewRequestPage extends StatelessWidget {
                         Expanded(
                           flex: 5,
                           child: OnBoardingTextFormField(
-                            controller: nameController,
+                            controller: endingTimeController,
                             validator: () {},
                             hintText: 'Ending time',
-                            keyboardType: TextInputType.name,
+                            keyboardType: TextInputType.number,
                             obscureText: false,
                           ),
                         ),
@@ -193,15 +194,16 @@ class NewRequestPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: supervisingController,
                       validator: () {},
                       hintText: 'supervising physician',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Icon(Icons.keyboard_arrow_down),
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: notesController,
                       validator: () {},
                       hintText: 'Notes',
                       keyboardType: TextInputType.name,

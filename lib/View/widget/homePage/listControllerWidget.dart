@@ -435,7 +435,30 @@ class NewGridControllerWidget extends StatelessWidget {
   }
 }
 
-// homePage18_3  GridView  -------------------------------------------------------------
+// homePage  -------------------------------------------------------------
+
+Widget C_GridView_2() {
+  return Container(
+    width: double.infinity,
+    height: 160,
+    child: GridView.count(
+      crossAxisSpacing: 5,
+      childAspectRatio: 1.7,
+      mainAxisSpacing: 1,
+      crossAxisCount: 4,
+      children: [
+        Column(children: [items_2_Page_3[1]]),
+        Column(children: [items_2_Page_3[2]]),
+        Column(children: [items_2_Page_3[3]]),
+        Column(children: [items_2_Page_3[4]]),
+        Column(children: [items_2_Page_3[5]]),
+        Column(children: [items_2_Page_3[6]]),
+      ],
+    ),
+  );
+}
+
+// homePage -------------------------------------------------------------
 
 Widget C_GridView_1() {
   return Container(
@@ -454,29 +477,6 @@ Widget C_GridView_1() {
         Column(children: [items_2_Page_3[5]]),
         Column(children: [items_2_Page_3[6]]),
         Column(children: [items_2_Page_3[2]]),
-      ],
-    ),
-  );
-}
-
-// homePage18_3 GridView  -------------------------------------------------------------
-
-Widget C_GridView_2() {
-  return Container(
-    width: double.infinity,
-    height: 160,
-    child: GridView.count(
-      crossAxisSpacing: 5,
-      childAspectRatio: 1.7,
-      mainAxisSpacing: 1,
-      crossAxisCount: 4,
-      children: [
-        Column(children: [items_2_Page_3[1]]),
-        Column(children: [items_2_Page_3[2]]),
-        Column(children: [items_2_Page_3[3]]),
-        Column(children: [items_2_Page_3[4]]),
-        Column(children: [items_2_Page_3[5]]),
-        Column(children: [items_2_Page_3[6]]),
       ],
     ),
   );

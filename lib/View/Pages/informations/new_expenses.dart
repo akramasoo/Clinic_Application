@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, use_key_in_widget_constructors, must_be_immutable
 
+import 'package:carehealth/View/widget/textfield_screen/my_app_bar.dart';
+import 'package:carehealth/View/widget/textfield_screen/my_textfield_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -9,48 +11,23 @@ import '../../widget/textfield_screen/onboarding_text_form_field.dart';
 import 'new_invoices.dart';
 
 class NewExpensesPage extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
-
+  TextEditingController idExpenesesController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController descController = TextEditingController();
+  TextEditingController timeController = TextEditingController();
+  TextEditingController dateController = TextEditingController();
+  TextEditingController valueController = TextEditingController();
+  TextEditingController payController = TextEditingController();
+  TextEditingController accountingCodeController = TextEditingController();
+  TextEditingController customerAddressController = TextEditingController();
+  String imagePath = 'assets/images/textfield';
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            // ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            ColorApp.greenColor2,
-            ColorApp.greenColor2,
-          ],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-      ),
+    return MyTextFieldContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          foregroundColor: ColorApp.blackColor,
-          leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.keyboard_arrow_left, size: 35),
-          ),
-          elevation: 0.0,
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          title: const Text(
-            'New Expenses',
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
-                color: ColorApp.blackColor,
-                fontFamily: 'Montserrat'),
-          ),
+        appBar:MyAppBar(
+          title:'New Expenses',
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -73,23 +50,31 @@ class NewExpensesPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: idExpenesesController,
                       validator: () {},
                       hintText: '#ID Expenses',
-                      keyboardType: TextInputType.name,
+                      keyboardType: TextInputType.number,
                       obscureText: false,
+                      suffixIcon: Image.asset('$imagePath/id_section.png',
+                        height: 1,
+                      ),
+
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: addressController,
                       validator: () {},
                       hintText: 'address',
-                      keyboardType: TextInputType.name,
+                      keyboardType: TextInputType.streetAddress,
                       obscureText: false,
+                      suffixIcon: Image.asset('$imagePath/location.png',
+                        height: 1,
+                      ),
+
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: descController,
                       validator: () {},
                       hintText: 'description',
                       keyboardType: TextInputType.name,
@@ -102,11 +87,15 @@ class NewExpensesPage extends StatelessWidget {
                         Expanded(
                           flex: 5,
                           child: OnBoardingTextFormField(
-                            controller: nameController,
+                            controller: timeController,
                             validator: () {},
                             hintText: 'time',
-                            keyboardType: TextInputType.name,
+                            keyboardType: TextInputType.number,
                             obscureText: false,
+                            suffixIcon: Image.asset('$imagePath/time.png',
+                              height: 1,
+                            ),
+
                           ),
                         ),
                         const SizedBox(
@@ -115,46 +104,63 @@ class NewExpensesPage extends StatelessWidget {
                         Expanded(
                           flex: 5,
                           child: OnBoardingTextFormField(
-                            controller: nameController,
+                            controller: dateController,
                             validator: () {},
                             hintText: 'Date',
                             keyboardType: TextInputType.name,
                             obscureText: false,
+                            suffixIcon: Image.asset('$imagePath/date.png',
+                              height: 1,
+                            ),
+
                           ),
                         ),
                       ],
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: valueController,
                       validator: () {},
                       hintText: 'The value of the expense \$',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Image.asset('$imagePath/value.png',
+                        height: 1,
+                      ),
+
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: payController,
                       validator: () {},
                       hintText: 'Pay for',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Icon(Icons.keyboard_arrow_down),
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: accountingCodeController,
                       validator: () {},
                       hintText: 'Accounting code',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Image.asset('$imagePath/code.png',
+                        height: 1,
+                      ),
+
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: customerAddressController,
                       validator: () {},
                       hintText: 'Customer address1',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Image.asset('$imagePath/location.png',
+                        height: 1,
+                      ),
+
                     ),
                     const SizedBox(height: 15.0),
                   ],
@@ -170,20 +176,13 @@ class NewExpensesPage extends StatelessWidget {
                   onPressed: () {},
                   child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Text('Attach File', textAlign: TextAlign.left)),
-                ),
-              ),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: ColorApp.primaryColor,
-                    minimumSize: Size(318, 51),
-                  ),
-                  onPressed: () {},
-                  child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text('Attach File', textAlign: TextAlign.left)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Attach File', textAlign: TextAlign.left),
+                          Icon(Icons.add,color: ColorApp.greenColor,size: 35,)
+                        ],
+                      )),
                 ),
               ),
               const SizedBox(height: 136),
@@ -195,7 +194,7 @@ class NewExpensesPage extends StatelessWidget {
                   onPressed: () {
                     Get.to(NewInvoicesPage());
                   },
-                  text: 'Create Client',
+                  text: 'Create Expenses',
                   size: 22,
                 ),
               ),

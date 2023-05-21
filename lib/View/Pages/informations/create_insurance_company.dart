@@ -1,5 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, must_be_immutable, prefer_const_constructors
 
+import 'package:carehealth/View/widget/textfield_screen/my_app_bar.dart';
+import 'package:carehealth/View/widget/textfield_screen/my_textfield_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -10,48 +12,35 @@ import '../../widget/textfield_screen/onboarding_text_widget.dart';
 import 'create_clients.dart';
 
 class CreateInsuranceCompanyPage extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
+  TextEditingController idInsuranceController = TextEditingController();
+  TextEditingController nameInsuranceController = TextEditingController();
+  TextEditingController descInsuranceController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController secondPhoneController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController officalEmailController = TextEditingController();
+  TextEditingController countryController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController secondAddressController = TextEditingController();
+  TextEditingController stateController = TextEditingController();
+  TextEditingController districtController = TextEditingController();
+  TextEditingController postalController = TextEditingController();
+  TextEditingController websiteController = TextEditingController();
+  TextEditingController facebookController = TextEditingController();
+  TextEditingController instagramController = TextEditingController();
+  TextEditingController twitterController = TextEditingController();
+  TextEditingController snapchatController = TextEditingController();
+  TextEditingController youtubeController = TextEditingController();
+
+  String imagePath = 'assets/images/textfield';
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            // ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            ColorApp.greenColor2,
-            ColorApp.greenColor2,
-          ],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-      ),
+    return MyTextFieldContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          foregroundColor: ColorApp.blackColor,
-          leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.keyboard_arrow_left, size: 35),
-          ),
-          elevation: 0.0,
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          title: const Text(
-            'Create Insurance company',
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
-                color: ColorApp.blackColor,
-                fontFamily: 'Montserrat'),
-          ),
+        appBar: MyAppBar(
+          title: 'Create Insurance company',
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -71,23 +60,30 @@ class CreateInsuranceCompanyPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: idInsuranceController,
                   validator: () {},
                   hintText: '#ID Insurance',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/id_section.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: nameInsuranceController,
                   validator: () {},
                   hintText: 'name of the insurance company',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/center_name.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: descInsuranceController,
                   validator: () {},
                   hintText: 'Description of the insurance company',
                   keyboardType: TextInputType.name,
@@ -96,83 +92,106 @@ class CreateInsuranceCompanyPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: phoneController,
                   validator: () {},
                   hintText: 'phone number',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.phone,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/phone.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: secondPhoneController,
                   validator: () {},
                   hintText: 'phone number 1',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.phone,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/phone.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: emailController,
                   validator: () {},
                   hintText: 'E-mail',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.emailAddress,
                   obscureText: false,
+                 suffixIcon: Icon(Icons.email_outlined),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: officalEmailController,
                   validator: () {},
                   hintText: 'official e-mail',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.emailAddress,
                   obscureText: false,
+                  suffixIcon: Icon(Icons.email_outlined),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: countryController,
                   validator: () {},
                   hintText: 'Country',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/country.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: addressController,
                   validator: () {},
                   hintText: 'Address',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.streetAddress,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/location.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: secondAddressController,
                   validator: () {},
                   hintText: 'Address 1',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.streetAddress,
                   obscureText: false,
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: stateController,
                   validator: () {},
                   hintText: 'State name',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/country.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: districtController,
                   validator: () {},
                   hintText: 'District name',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/state.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: postalController,
                   validator: () {},
                   hintText: 'Postal code',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/postal.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextWidget(
@@ -183,51 +202,69 @@ class CreateInsuranceCompanyPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: websiteController,
                   validator: () {},
                   hintText: 'Website',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.url,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/url.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: facebookController,
                   validator: () {},
                   hintText: 'Facebook',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.text,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/facebook.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: instagramController,
                   validator: () {},
                   hintText: 'Instagram',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.text,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/instagram.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: twitterController,
                   validator: () {},
                   hintText: 'Twitter',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.text,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/twitter.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: snapchatController,
                   validator: () {},
                   hintText: 'Snapchat',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.text,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/snapchat.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: youtubeController,
                   validator: () {},
                   hintText: 'YouTube',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.text,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/youtube.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 33.0),
                 OnBoardingButton(

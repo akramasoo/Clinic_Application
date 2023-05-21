@@ -16,7 +16,7 @@ class NewDividerWidget extends StatelessWidget {
 // -------------------------------------------------------------------------------
 Widget New_Divider({color, thickness}) {
   return Divider(
-    color: color == null ? Color.fromARGB(255, 232, 225, 225) : color,
+    color: color == null ? Color.fromARGB(255, 121, 121, 121) : color,
     thickness: thickness,
   );
 }
