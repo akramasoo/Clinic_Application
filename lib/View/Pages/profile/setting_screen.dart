@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_import, unused_import, prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:carehealth/constatnt/font_app_styles.dart';
+import 'package:carehealth/view/Pages/profile/profile.dart';
 import 'package:carehealth/view/pages/profile/privacy_policy.dart';
 import 'package:carehealth/view/pages/profile/unites_of_measure.dart';
 import 'package:flutter/material.dart';
@@ -37,14 +38,16 @@ class SettingScreen extends StatelessWidget {
                       //  mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.offAll(Profile());
+                            },
                             icon: Icon(Icons.arrow_back_ios_outlined,
                                 size: 26, color: Colors.white)),
                         SizedBox(
                           width: 80,
                         ),
                         Align(
-                          // alignment: Alignment.center,
+                          alignment: Alignment.center,
                           child: Text(
                             "Setting",
                             textAlign: TextAlign.center,

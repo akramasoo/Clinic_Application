@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors
 
+import 'package:carehealth/View/Pages/accounts/create_accounts.dart';
 import 'package:carehealth/constatnt/font_app_styles.dart';
 import 'package:carehealth/constatnt/image_app.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +48,8 @@ class ChooseMajor extends StatelessWidget {
                         ),
                         InkWell(
                           onTap: () {
-                            Get.to(AlertDailogTest());
+                            //  Get.to(AlertDailogTest());
+                            Get.to(Create_Accounts());
                           },
                           child: Column(
                             children: [
@@ -60,27 +62,35 @@ class ChooseMajor extends StatelessWidget {
                             CustomChooseMajor(
                               image: ImagesApp.imDoctor,
                               textTitle: "I'm a Doctor'",
-                              onTap: () {},
+                              onTap: () {
+                                Get.to(Create_Accounts());
+                              },
                             ),
                             Spacer(),
                             CustomChooseMajor(
                               image: ImagesApp.imNurse,
                               textTitle: "I'm a imNurse",
-                              onTap: () {},
+                              onTap: () {
+                                Get.to(Create_Accounts());
+                              },
                             ),
                           ],
                         ),
                         Row(
                           children: [
                             CustomChooseMajor(
-                                onTap: () {},
+                                onTap: () {
+                                  Get.to(Create_Accounts());
+                                },
                                 image: ImagesApp.physiotherapy,
                                 textTitle: "Physiotherapy"),
                             Spacer(),
                             CustomChooseMajor(
                               image: ImagesApp.pharmacy,
                               textTitle: "pharmacy",
-                              onTap: () {},
+                              onTap: () {
+                                Get.to(Create_Accounts());
+                              },
                             ),
                           ],
                         ),
@@ -89,13 +99,17 @@ class ChooseMajor extends StatelessWidget {
                             CustomChooseMajor(
                               image: ImagesApp.hospital,
                               textTitle: "hospital",
-                              onTap: () {},
+                              onTap: () {
+                                Get.to(Create_Accounts());
+                              },
                             ),
                             Spacer(),
                             CustomChooseMajor(
                               image: ImagesApp.pharmacy,
                               textTitle: "Medical_Center",
-                              onTap: () {},
+                              onTap: () {
+                                Get.to(Create_Accounts());
+                              },
                             ),
                           ],
                         ),

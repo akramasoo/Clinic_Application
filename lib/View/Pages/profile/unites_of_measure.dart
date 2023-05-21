@@ -6,7 +6,7 @@ import '../../../constatnt/color_app.dart';
 import '../../../constatnt/font_app_styles.dart';
 import '../../../controller/radio_controller.dart';
 
-class UnitsOfMeasure extends StatelessWidget {
+class UnitsOfMeasure extends GetView<RadioController> {
   const UnitsOfMeasure({
     Key? key,
   }) : super(key: key);
