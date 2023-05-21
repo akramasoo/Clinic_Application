@@ -37,9 +37,7 @@ class Notifications extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             IconButton(
-                                onPressed: () {
-                                  Get.to(SettingScreen());
-                                },
+                                onPressed: () {},
                                 icon: Icon(Icons.arrow_back_ios_outlined,
                                     size: 26, color: Colors.white)),
                             Text(

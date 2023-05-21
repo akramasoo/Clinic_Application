@@ -48,8 +48,16 @@ class Payment extends StatelessWidget {
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(3),
-                              child: Icon(Icons.arrow_back_ios_new_outlined,
-                                  size: 19, color: Colors.white),
+
+
+                              child: InkWell(
+                                onTap: () {
+                                  Get.back();
+                                },
+                                child: Icon(Icons.arrow_back_ios_new_outlined,
+                                    size: 19, color: Colors.white),
+                              ),
+
                             ),
                           ),
                           Padding(

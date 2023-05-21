@@ -1,5 +1,8 @@
-// ignore_for_file: prefer_const_constructors, file_names, annotate_overrides, sized_box_for_whitespace, avoid_unnecessary_containers, camel_case_types
+// ignore_for_file: prefer_const_constructors, file_names, annotate_overrides, sized_box_for_whitespace, avoid_unnecessary_containers, camel_case_types, unused_import
 
+import 'package:carehealth/View/Pages/accounts/write__review.dart';
+import 'package:carehealth/View/Pages/review/reviewsPage.dart';
+import 'package:carehealth/view/Pages/home_page/Book_Now.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:scroll_app_bar/scroll_app_bar.dart';
@@ -7,6 +10,7 @@ import '../../../constatnt/color_app.dart';
 import '../../../controller/homeController.dart';
 import '../../widget/homePage/bottomWidget.dart';
 import '../../widget/homePage/reviewsListWidget.dart';
+import '../accounts/appointment.dart';
 
 class TrainerDetail extends StatelessWidget {
   TrainerDetail({super.key});
@@ -41,7 +45,9 @@ class TrainerDetail extends StatelessWidget {
                   maxRadius: 40.0,
                   minRadius: 40.0,
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.back();
+                    },
                     child: Container(
                         margin: EdgeInsets.only(left: 7.0),
                         child: Icon(Icons.arrow_back_ios,
@@ -134,7 +140,13 @@ class TrainerDetail extends StatelessWidget {
                   leftMar: 10.0,
                   bottomMar: 0.0),
               // ================= Bottom Widget ======================================
-              Bottom_1Widget(text: 'Book an Appointment', textFont: 'OpenSans'),
+              Bottom_1Widget(
+                text: 'Book an Appointment',
+                textFont: 'OpenSans',
+                ontap: () {
+                  Get.to(Appointment());
+                },
+              ),
               SizedBox(
                 height: 47.0,
               )
@@ -210,6 +222,9 @@ class CountReviews extends StatelessWidget {
             },
           ),
           InkWell(
+            onTap: () {
+              Get.to(Reviews());
+            },
             child: Container(
               child: Center(
                 child: Text(
