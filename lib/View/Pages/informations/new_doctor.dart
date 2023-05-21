@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import, use_key_in_widget_constructors, must_be_immutable, prefer_const_constructors
+// ignore_for_file: unused_import, use_key_in_widget_constructors, must_be_immutable, prefer_const_constructors, non_constant_identifier_names
 
 import 'package:carehealth/View/widget/textfield_screen/my_app_bar.dart';
 import 'package:carehealth/View/widget/textfield_screen/my_textfield_container.dart';
@@ -37,7 +37,7 @@ class NewDoctorPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: MyAppBar(
-          title:   'New doctor',
+          title: 'New doctor',
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -63,10 +63,10 @@ class NewDoctorPage extends StatelessWidget {
                   hintText: '#ID Doctor',
                   keyboardType: TextInputType.number,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/path.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/path.png',
                     height: 1,
                   ),
-
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
@@ -75,7 +75,8 @@ class NewDoctorPage extends StatelessWidget {
                   hintText: '@username',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/user.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/user.png',
                     height: 1,
                   ),
                 ),
@@ -86,7 +87,8 @@ class NewDoctorPage extends StatelessWidget {
                   hintText: 'Job number',
                   keyboardType: TextInputType.number,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/person_up.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/person_up.png',
                     height: 1,
                   ),
                 ),
@@ -97,7 +99,8 @@ class NewDoctorPage extends StatelessWidget {
                   hintText: 'Full name',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/person_plus.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/person_plus.png',
                     height: 1,
                   ),
                 ),
@@ -108,7 +111,8 @@ class NewDoctorPage extends StatelessWidget {
                   hintText: 'National ID',
                   keyboardType: TextInputType.number,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/user.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/user.png',
                     height: 1,
                   ),
                 ),
@@ -146,7 +150,8 @@ class NewDoctorPage extends StatelessWidget {
                   hintText: 'date of birth',
                   keyboardType: TextInputType.number,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/date.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/date.png',
                     height: 1,
                   ),
                 ),
@@ -157,7 +162,8 @@ class NewDoctorPage extends StatelessWidget {
                   hintText: 'Years of Experience',
                   keyboardType: TextInputType.number,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/star.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/star.png',
                     height: 1,
                   ),
                 ),
@@ -168,7 +174,8 @@ class NewDoctorPage extends StatelessWidget {
                   hintText: 'experience',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/exp.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/exp.png',
                     height: 1,
                   ),
                 ),
@@ -179,7 +186,8 @@ class NewDoctorPage extends StatelessWidget {
                   hintText: 'phone number',
                   keyboardType: TextInputType.phone,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/phone.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/phone.png',
                     height: 1,
                   ),
                 ),
@@ -190,7 +198,8 @@ class NewDoctorPage extends StatelessWidget {
                   hintText: 'Work phone number',
                   keyboardType: TextInputType.phone,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/phone.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/phone.png',
                     height: 1,
                   ),
                 ),

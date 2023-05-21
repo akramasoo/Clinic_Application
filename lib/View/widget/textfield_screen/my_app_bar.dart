@@ -1,9 +1,11 @@
+// ignore_for_file: must_be_immutable, use_key_in_widget_constructors, prefer_const_constructors, unnecessary_string_interpolations
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../constatnt/color_app.dart';
 
-class MyAppBar extends StatelessWidget  implements PreferredSizeWidget {
+class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   String title;
 
   MyAppBar({required this.title});
@@ -21,7 +23,7 @@ class MyAppBar extends StatelessWidget  implements PreferredSizeWidget {
       elevation: 0.0,
       centerTitle: true,
       backgroundColor: Colors.transparent,
-      title:  Text(
+      title: Text(
         '$title',
         style: const TextStyle(
             fontWeight: FontWeight.w700,

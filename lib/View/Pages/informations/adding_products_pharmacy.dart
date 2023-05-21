@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, must_be_immutable, prefer_const_constructors
+// ignore_for_file: use_key_in_widget_constructors, must_be_immutable, prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -74,7 +74,8 @@ class ProductsPharamcyPage extends StatelessWidget {
                       hintText: '#ID products',
                       keyboardType: TextInputType.number,
                       obscureText: false,
-                      suffixIcon: Image.asset('$imagePath/path.png',
+                      suffixIcon: Image.asset(
+                        '$imagePath/path.png',
                         height: 1,
                       ),
                     ),
@@ -85,7 +86,8 @@ class ProductsPharamcyPage extends StatelessWidget {
                       hintText: 'product name',
                       keyboardType: TextInputType.name,
                       obscureText: false,
-                      suffixIcon: Image.asset('$imagePath/user.png',
+                      suffixIcon: Image.asset(
+                        '$imagePath/user.png',
                         height: 1,
                       ),
                     ),
@@ -137,7 +139,8 @@ class ProductsPharamcyPage extends StatelessWidget {
                   hintText: 'price \$',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/value.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/value.png',
                     height: 1,
                   ),
                 ),
@@ -148,8 +151,7 @@ class ProductsPharamcyPage extends StatelessWidget {
                   horizontal: 21.0,
                 ),
                 child: OnBoardingButton(
-                  onPressed: () {
-                  },
+                  onPressed: () {},
                   text: 'SAVE',
                   size: 22,
                 ),

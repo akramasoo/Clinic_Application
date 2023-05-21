@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, must_be_immutable
+// ignore_for_file: use_key_in_widget_constructors, must_be_immutable, prefer_const_constructors
 
 import 'package:carehealth/View/widget/textfield_screen/my_app_bar.dart';
 import 'package:carehealth/View/widget/textfield_screen/my_textfield_container.dart';
@@ -37,7 +37,6 @@ class CreatePharmacyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyTextFieldContainer(
-
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: MyAppBar(
@@ -68,10 +67,10 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: '#ID Pharmacy',
                   keyboardType: TextInputType.number,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/path.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/path.png',
                     height: 1,
                   ),
-
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
@@ -80,10 +79,10 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'name of the pharmacy',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/user.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/user.png',
                     height: 1,
                   ),
-
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
@@ -92,10 +91,10 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: '@username',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/person_up.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/person_up.png',
                     height: 1,
                   ),
-
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
@@ -104,7 +103,8 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'phone number',
                   keyboardType: TextInputType.phone,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/phone.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/phone.png',
                     height: 1,
                   ),
                 ),
@@ -115,7 +115,8 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'phone number 1',
                   keyboardType: TextInputType.phone,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/phone.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/phone.png',
                     height: 1,
                   ),
                 ),
@@ -144,7 +145,8 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'Country',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/center_name.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/center_name.png',
                     height: 1,
                   ),
                 ),
@@ -155,7 +157,8 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'Address',
                   keyboardType: TextInputType.streetAddress,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/location.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/location.png',
                     height: 1,
                   ),
                 ),
@@ -174,7 +177,8 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'State name',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/country.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/country.png',
                     height: 1,
                   ),
                 ),
@@ -185,7 +189,8 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'District name',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/country.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/country.png',
                     height: 1,
                   ),
                 ),
@@ -196,7 +201,8 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'Postal code',
                   keyboardType: TextInputType.number,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/postal.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/postal.png',
                     height: 1,
                   ),
                 ),
@@ -214,7 +220,8 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'Website',
                   keyboardType: TextInputType.url,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/url.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/url.png',
                     height: 1,
                   ),
                 ),
@@ -225,7 +232,8 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'Facebook',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/facebook.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/facebook.png',
                     height: 1,
                   ),
                 ),
@@ -236,7 +244,8 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'Instagram',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/instagram.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/instagram.png',
                     height: 1,
                   ),
                 ),
@@ -247,7 +256,8 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'Twitter',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/twitter.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/twitter.png',
                     height: 1,
                   ),
                 ),
@@ -258,7 +268,8 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'Snapchat',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/snapchat.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/snapchat.png',
                     height: 1,
                   ),
                 ),
@@ -269,7 +280,8 @@ class CreatePharmacyPage extends StatelessWidget {
                   hintText: 'YouTube',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/youtube.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/youtube.png',
                     height: 1,
                   ),
                 ),

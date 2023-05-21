@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, must_be_immutable
+// ignore_for_file: use_key_in_widget_constructors, must_be_immutable, prefer_const_constructors
 
 import 'package:carehealth/View/widget/textfield_screen/my_app_bar.dart';
 import 'package:flutter/material.dart';
@@ -67,7 +67,8 @@ class CenterInformationPage extends StatelessWidget {
                   hintText: 'Center Name',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/center_name.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/center_name.png',
                     height: 1,
                   ),
                 ),
@@ -81,7 +82,8 @@ class CenterInformationPage extends StatelessWidget {
                   hintText: '@username',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/username.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/username.png',
                     height: 1,
                   ),
                 ),
@@ -117,7 +119,8 @@ class CenterInformationPage extends StatelessWidget {
                   hintText: 'Center website',
                   keyboardType: TextInputType.url,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/url.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/url.png',
                     height: 1,
                   ),
                 ),
@@ -149,8 +152,9 @@ class CenterInformationPage extends StatelessWidget {
                   hintText: 'Country',
                   keyboardType: TextInputType.streetAddress,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/country.png',
-                  height: 1,
+                  suffixIcon: Image.asset(
+                    '$imagePath/country.png',
+                    height: 1,
                   ),
                 ),
                 const SizedBox(height: 15.0),
@@ -160,7 +164,8 @@ class CenterInformationPage extends StatelessWidget {
                   hintText: 'Address',
                   keyboardType: TextInputType.streetAddress,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/location.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/location.png',
                     height: 1,
                   ),
                 ),
@@ -179,7 +184,8 @@ class CenterInformationPage extends StatelessWidget {
                   hintText: 'State name',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/state.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/state.png',
                     height: 1,
                   ),
                 ),
@@ -198,7 +204,8 @@ class CenterInformationPage extends StatelessWidget {
                   hintText: 'Postal code',
                   keyboardType: TextInputType.number,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/postal.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/postal.png',
                     height: 1,
                   ),
                 ),
@@ -216,7 +223,8 @@ class CenterInformationPage extends StatelessWidget {
                   hintText: 'Facebook',
                   keyboardType: TextInputType.url,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/facebook.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/facebook.png',
                     height: 1,
                   ),
                 ),
@@ -227,7 +235,8 @@ class CenterInformationPage extends StatelessWidget {
                   hintText: 'Instagram',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/instagram.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/instagram.png',
                     height: 1,
                   ),
                 ),
@@ -238,7 +247,8 @@ class CenterInformationPage extends StatelessWidget {
                   hintText: 'Twitter',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/twitter.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/twitter.png',
                     height: 1,
                   ),
                 ),
@@ -249,7 +259,8 @@ class CenterInformationPage extends StatelessWidget {
                   hintText: 'Snapchat',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/snapchat.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/snapchat.png',
                     height: 1,
                   ),
                 ),
@@ -260,7 +271,8 @@ class CenterInformationPage extends StatelessWidget {
                   hintText: 'YouTube',
                   keyboardType: TextInputType.name,
                   obscureText: false,
-                  suffixIcon: Image.asset('$imagePath/youtube.png',
+                  suffixIcon: Image.asset(
+                    '$imagePath/youtube.png',
                     height: 1,
                   ),
                 ),
