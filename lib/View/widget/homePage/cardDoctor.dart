@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_typing_uninitialized_variables, depend_on_referenced_packages, unused_import, file_names, prefer_const_constructors, unnecessary_brace_in_string_interps, avoid_print, camel_case_types, prefer_const_literals_to_create_immutables
 
+import 'package:carehealth/View/Pages/home_page/Favourite.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
@@ -25,6 +26,7 @@ class NewCardDoctorWidget extends StatelessWidget {
   });
 
   final HomeController extController = Get.find();
+  var isPressed = false.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -88,10 +90,15 @@ class NewCardDoctorWidget extends StatelessWidget {
               children: [
                 InkWell(
                     onTap: () {
-                      extController.changeColorIconFav();
+                      isPressed.value = !isPressed.value;
                     },
-                    child: Icon(extController.iconData,
-                        color: extController.iconColor, size: 16.0)),
+                    child: Obx(() => Icon(
+                          isPressed.value
+                              ? Icons.favorite
+                              : Icons.favorite_border,
+                          color: isPressed.value ? Colors.red : Colors.grey,
+                          size: 16.0,
+                        ))),
                 Row(
                   children: [
                     Text(
@@ -135,7 +142,7 @@ class NewCardDoctorWidgetThree extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
     return InkWell(
       onTap: () {
-        Get.to(TrainerDetail());
+    
       },
       child: Container(
         margin: EdgeInsets.only(bottom: 10.0),
@@ -223,7 +230,9 @@ class NewCardDoctorWidgetThree extends StatelessWidget {
             ),
             SizedBox(),
             InkWell(
-                onTap: () {},
+                onTap: () {
+                      Get.to(TrainerDetail());
+                },
                 child: Icon(
                   Icons.arrow_forward_ios,
                   color: Colors.black,
@@ -386,7 +395,7 @@ class NewCardDoctorWidgetTwo_1 extends StatelessWidget {
   });
 
   final HomeController extController = Get.find();
-
+var isPressed = false.obs;
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -479,10 +488,14 @@ class NewCardDoctorWidgetTwo_1 extends StatelessWidget {
               children: [
                 InkWell(
                     onTap: () {
-                      extController.changeColorIconFav();
+                      isPressed.value = !isPressed.value;
                     },
-                    child: Icon(extController.iconData,
-                        color: extController.iconColor, size: 16.0)),
+                    child: Obx(() => Icon(
+                          isPressed.value ? Icons.favorite : Icons.favorite_border,
+                          color: isPressed.value ? Colors.red : Colors.grey,
+                          size: 16.0,
+                        )),
+                  ),
                 Container(
                   height: 41,
                   width: 115,

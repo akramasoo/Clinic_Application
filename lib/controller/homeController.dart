@@ -1,12 +1,19 @@
 // ignore_for_file: file_names, implementation_imports
 
+import 'package:carehealth/constatnt/color_app.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/icon_data.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  bool notify_1 = true;
-  bool notify_2 = false;
+  // bool notify_1 = true;
+  // bool notify_2 = false;
   String assetName_1 = 'assets/images/Ellipse.png';
+
+   var isPressed1 = false.obs;
+   var isPressed2 = false.obs;
+   var selectLanguage  = 'English';
+  var  dropdownText  = ['English', 'Spanish', 'Chinese','Japanese','French','German','Russian','Portugues','Italian','Korean',];
 
 //=================== List Detaile doctores ============================
   List bestDoctorList = [
@@ -154,9 +161,15 @@ class HomeController extends GetxController {
     },
   ];
 
-  IconData? get iconData => null;
+  IconData? get iconData => Icons.favorite_border;
 
-  get iconColor => null;
+  dynamic get iconColor => ColorApp.greyColor2;
 
-  void changeColorIconFav() {}
+  void changeColorIconFav() {
+
+    if (iconColor == ColorApp.greyColor2) {
+      // iconColor = ColorApp.redColor;
+      
+    }
+  }
 }

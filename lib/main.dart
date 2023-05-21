@@ -11,6 +11,8 @@ import 'View/Pages/home_page/Favourite.dart';
 import 'View/Pages/home_page/speed_Dial.dart';
 import 'View/Pages/home_page/Book_Now.dart';
 import 'View/Pages/profile/profile.dart';
+import 'View/Pages/review/appSettingPage.dart';
+import 'View/Pages/review/trainerDetailPage.dart';
 import 'constatnt/color_app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -51,7 +53,7 @@ class MyApp extends StatelessWidget {
       //
       getPages: AppPage.routes,
       initialRoute: AppPage.getBoarding_Start(),
-      // home: AddNew(),
+      // home: AppSetting(),
     );
   }
 }

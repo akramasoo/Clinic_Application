@@ -59,7 +59,7 @@ class NewListControllerBestDoctorOneWidget extends StatelessWidget {
           child: ListView.builder(
             itemCount: controller.bestDoctorList.length,
             itemBuilder: (context, index) {
-              return NewWidgetBestDoctorOne_1(
+              return WidgetBestDoctorOne_1(
                 num: controller.bestDoctorList[index]['numfav'],
                 image: controller.bestDoctorList[index]['image'],
                 hour: controller.bestDoctorList[index]['hour'],
@@ -201,12 +201,12 @@ class NewListDoctorControllerCardWidgetThree extends StatelessWidget {
     return GetBuilder<HomeController>(
       builder: (controller) {
         return Container(
-          margin: EdgeInsets.all(10.0),
-          height: 230,
+          margin: EdgeInsets.symmetric(vertical: 10.0),
+          height: 345,
           width: screenWidth,
           child: Column(
             children: [
-              for (int i = 0; i < 2; i++) ...[
+              for (int i = 0; i <3 ; i++) ...[
                 NewCardDoctorWidgetThree(
                   name: controller.bestDoctorList[0 + i]['name2'],
                   title: controller.bestDoctorList[0 + i]['title'],
@@ -274,7 +274,7 @@ class NewListControllerPoplularDoctorWidget extends StatelessWidget {
           child: ListView.builder(
             itemCount: controller.bestDoctorList.length,
             itemBuilder: (context, index) {
-              return NewWidgetBestDoctorOne_1(
+              return WidgetBestDoctorOne_1(
                 num: controller.bestDoctorList[index]['numfav'],
                 image: controller.bestDoctorList[index]['image'],
                 hour: controller.bestDoctorList[index]['hour'],
@@ -325,7 +325,7 @@ class NewListControllerBestDoctorWidget_1 extends StatelessWidget {
 
 // =============== List Categories =========================
 class NewListControllerCategoryWidget extends StatelessWidget {
-  const NewListControllerCategoryWidget({
+   NewListControllerCategoryWidget({
     super.key,
     required this.screenWidth,
   });
@@ -348,24 +348,7 @@ class NewListControllerCategoryWidget extends StatelessWidget {
                 child: ListView.builder(
                   itemCount: controller.bestDoctorList.length,
                   itemBuilder: (context, index) {
-                    return Container(
-                      margin: EdgeInsets.only(left: 5.0),
-                      height: 32,
-                      width: 90,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.0),
-                        color: ColorApp.greyColor,
-                      ),
-                      child: Center(
-                        child: Text(
-                          'Category',
-                          style: TextStyle(
-                              color: ColorApp.greyColor5,
-                              fontSize: 11,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                    );
+                    return CategoryWidgetBottom();
                   },
                   scrollDirection: Axis.horizontal,
                 ),
@@ -392,6 +375,41 @@ class NewListControllerCategoryWidget extends StatelessWidget {
           ],
         );
       },
+    );
+  }
+}
+
+class CategoryWidgetBottom extends StatelessWidget {
+   CategoryWidgetBottom({
+    super.key,
+    
+  });
+
+ var isPressed = true.obs;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+          isPressed.value = !isPressed.value;
+      },
+      child: Obx(() => Container(
+        margin: EdgeInsets.only(left: 5.0),
+        height: 32,
+        width: 90,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5.0),
+          color: isPressed.value ?ColorApp.greyColor: ColorApp.blackBlueColor
+        ),
+        child: Center(
+          child: Text(
+            'Category',
+            style: TextStyle(
+                color:isPressed.value ? ColorApp.greyColor5: ColorApp.whiteColor2,
+                fontSize: 11,
+                fontWeight: FontWeight.w500),
+          ),
+        ),
+      ),),
     );
   }
 }

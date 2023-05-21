@@ -775,7 +775,7 @@ class HomePage extends StatelessWidget {
                   // ============== TwoTop card doctor rate ===============
                   NewListDoctorControllerCardWidget(
                       screenWidth: MediaQuery.of(context).size.width),
-                  // =============== Book npw text ===========================
+                  // =============== Book now text ===========================
                   NewTextBookNowWidget(text: 'Book Now'),
                   // =============== List Categories =========================
                   NewListControllerCategoryWidget(
@@ -789,6 +789,33 @@ class HomePage extends StatelessWidget {
                   NewTextBestDoctorTwoWidget(word: 'Popular Doctors'),
                   // =============== List detailes doctores ==============
                   NewListControllerBestDoctorPopularWidget(),
+                  // =============== Social worker text ===========================
+                  NewTextBookNowWidget(text: 'Social worker'),
+                   // =============== Two top list of doctores title and rate ==================
+                NewListDoctorControllerCardWidgetThree(
+                    screenWidth: MediaQuery.of(context).size.width),
+                      // =============== nutrition text ===========================
+                  NewTextBookNowWidget(text: 'nutrition'),
+                   // =============== Two top list of doctores title and rate ==================
+                NewListDoctorControllerCardWidgetThree(
+                    screenWidth: MediaQuery.of(context).size.width),
+                     // =============== Paid adss text =================
+                   NewTextBestDoctorTwoWidget(word: 'Paid ads'),
+                  // =============== List detailes doctores ==============
+                  NewListControllerBestDoctorPopularWidget(),
+                   // =============== natural therapy text =================
+                
+                   NewTextBestDoctorTwoWidget(word: 'natural therapy'),
+                  // =============== List detailes doctores ==============
+                  NewListControllerBestDoctorPopularWidget(),
+                   // =============== Medical centers text ===========================
+                  NewTextBookNowWidget(text: 'Medical centers'),
+                  // =============== List Categories =========================
+                  NewListControllerCategoryWidget(
+                      screenWidth: MediaQuery.of(context).size.width),
+                  // =============== Three top card doctor rate ===========
+                  NewListControllerCardTwoWidget_1(
+                      screenWidth: MediaQuery.of(context).size.width),
                 ],
               ),
             ),
