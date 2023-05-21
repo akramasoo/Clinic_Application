@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, unused_import
 
+import 'package:carehealth/View/Pages/Trainer/paymentCompleted.dart';
 import 'package:carehealth/View/Pages/home_page/HomePage.dart';
 import 'package:carehealth/routes/routes.dart';
 import 'package:flutter/cupertino.dart';
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
       //
       // getPages: AppPage.routes,
       // initialRoute: AppPage.getBoarding_Start(),
-      home: HomePage(),
+      home: PaymentCompleted(),
     );
   }
 }
