@@ -43,8 +43,15 @@ abstract class Styles {
     fontSize: 20,
     fontWeight: FontWeight.w700,
     fontStyle: FontStyle.normal,
-    fontFamily: "DEMO",
+    fontFamily: "Switzer",
     color: Colors.white,
+  );
+  static const textStyle20Settingcolor = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w700,
+    fontStyle: FontStyle.normal,
+    fontFamily: "Switzer",
+    color: Colors.black,
   );
   static const textStyle22 = TextStyle(
     fontSize: 20,
@@ -60,6 +67,7 @@ abstract class Styles {
       fontStyle: FontStyle.normal,
       fontFamily: 'Switzer',
       color: ColorApp.backgroundWhaitColor);
+
   static const textStyle18black = TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w500,
@@ -68,10 +76,17 @@ abstract class Styles {
       color: Colors.black);
 
   static const textStyleprivacy = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+    fontFamily: 'Switzer',
+    color: Colors.grey,
+    height: 2,
+  );
+  static const textStyleprivacycolor = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.normal,
     fontFamily: 'Switzer',
-    color: ColorApp.backgroundWhaitColor,
+    color: Color(0xFFD0FD3E),
     height: 2,
   );
   static const textStyleGrey = TextStyle(

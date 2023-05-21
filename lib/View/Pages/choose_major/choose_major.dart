@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../constatnt/color_app.dart';
 import '../../widget/choose_major/custom_choose_major.dart';
-import 'alert_dialog.dart';
+//import 'alert_dialog.dart';
 
 class ChooseMajor extends StatelessWidget {
   ChooseMajor({

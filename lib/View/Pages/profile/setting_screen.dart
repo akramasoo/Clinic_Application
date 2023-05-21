@@ -29,7 +29,7 @@ class SettingScreen extends StatelessWidget {
         body: SafeArea(
           child: Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(24.0),
               child: Column(
                 children: [
                   Container(
@@ -49,7 +49,7 @@ class SettingScreen extends StatelessWidget {
                         Align(
                           alignment: Alignment.center,
                           child: Text(
-                            "Setting",
+                            "Settings",
                             textAlign: TextAlign.center,
                             style: Styles.textStyle20Setting,
                           ),
@@ -106,7 +106,7 @@ class SettingScreen extends StatelessWidget {
                     height: 60,
                     child: InkWell(
                       onTap: () {
-                        Get.to(PrivacyPolicy());
+                        //  Get.to(PrivacyPolicy());
                       },
                       child: Row(
                         // mainAxisAlignment: MainAxisAlignment.spaceBetween,

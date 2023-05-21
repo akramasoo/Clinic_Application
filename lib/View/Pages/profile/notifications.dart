@@ -1,5 +1,6 @@
 // ignore_for_file: unnecessary_import, unused_import, prefer_const_constructors, sized_box_for_whitespace
 
+import 'package:carehealth/View/Pages/profile/setting_screen.dart';
 import 'package:carehealth/constatnt/font_app_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,9 @@ class Notifications extends StatelessWidget {
                           //  mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.to(SettingScreen());
+                                },
                                 icon: Icon(Icons.arrow_back_ios_outlined,
                                     size: 26, color: Colors.white)),
                             SizedBox(
@@ -77,7 +80,7 @@ class Notifications extends StatelessWidget {
                       SizedBox(
                         height: 20,
                       ),
-                      Divider(),
+                      Divider(color: Colors.black),
                       Row(
                         children: [
                           SizedBox(
@@ -101,12 +104,21 @@ class Notifications extends StatelessWidget {
                       ),
                       Spacer(),
                       Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Text(
-                          "You can manage your app notification \n permission in your Phone Settings",
-                          style: Styles.textStyleprivacy,
+                        padding: const EdgeInsets.all(44.0),
+                        child: Center(
+                          child: RichText(
+                            text: TextSpan(children: const <TextSpan>[
+                              TextSpan(
+                                  text:
+                                      "You can manage your app notification \n permission in your ",
+                                  style: Styles.textStyleprivacy),
+                              TextSpan(
+                                  text: "Phone Settings",
+                                  style: Styles.textStyleprivacycolor),
+                            ]),
+                          ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),

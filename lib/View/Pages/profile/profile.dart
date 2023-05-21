@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
+import 'package:carehealth/View/Pages/profile/privacy_policy.dart';
 import 'package:carehealth/View/Pages/profile/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -177,18 +178,23 @@ class Profile extends StatelessWidget {
               ),
               const SizedBox(height: 21),
               // Privacy Policy
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  OnBoardingTextWidget(
-                    text: 'Privacy Policy',
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black,
-                  ),
-                  const Icon(Icons.arrow_forward_ios_outlined,
-                      color: Colors.black),
-                ],
+              InkWell(
+                onTap: () {
+                  Get.to(PrivacyPolicy());
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    OnBoardingTextWidget(
+                      text: 'Privacy Policy',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                    ),
+                    const Icon(Icons.arrow_forward_ios_outlined,
+                        color: Colors.black),
+                  ],
+                ),
               ),
               const SizedBox(height: 21),
               const Divider(
@@ -262,7 +268,9 @@ class Profile extends StatelessWidget {
               const SizedBox(height: 21),
               // Settings
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Get.off(SettingScreen());
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
