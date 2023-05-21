@@ -1,4 +1,5 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
+import 'package:carehealth/View/Pages/choose_major/alert_dialog.dart';
 import 'package:carehealth/View/Pages/profile/privacy_policy.dart';
 import 'package:carehealth/View/Pages/profile/setting_screen.dart';
 import 'package:flutter/material.dart';
@@ -286,11 +287,11 @@ class Profile extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 21),
-              const Divider(
-                color: Color(0xff505050),
-                thickness: 1,
-                height: 1,
-              ),
+              // const Divider(
+              //   color: Color(0xff505050),
+              //   thickness: 1,
+              //   height: 1,
+              // ),
               // const SizedBox(height: 49),
               // Container(
               //   decoration: BoxDecoration(
@@ -346,20 +347,25 @@ class Profile extends StatelessWidget {
               //     ),
               //   ),
               // ),
-              const SizedBox(height: 17),
+              //   const SizedBox(height: 17),
               const Divider(
                 color: Color(0xff505050),
                 thickness: 1,
                 height: 1,
               ),
               const SizedBox(height: 20),
-              Align(
-                alignment: Alignment.topLeft,
-                child: OnBoardingTextWidget(
-                    text: "Sign Out",
-                    fontSize: 17,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.red),
+              InkWell(
+                onTap: () {
+                  //   Get.to(AlertDailogTest());
+                },
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: OnBoardingTextWidget(
+                      text: "Sign Out",
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.red),
+                ),
               ),
               const SizedBox(height: 20),
               const Divider(

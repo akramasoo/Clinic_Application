@@ -23,7 +23,7 @@ class PrivacyPolicy extends StatelessWidget {
           child: Column(
             children: [
               Row(
-                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
                       onPressed: () {
@@ -31,17 +31,14 @@ class PrivacyPolicy extends StatelessWidget {
                       },
                       icon: Icon(Icons.arrow_back_ios_outlined,
                           size: 26, color: Colors.black)),
-                  SizedBox(
-                    width: 80,
+                  Text(
+                    "Privacy Policy",
+                    textAlign: TextAlign.center,
+                    style: Styles.textStyle20Settingcolor,
                   ),
-                  const Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Privacy Policy",
-                      textAlign: TextAlign.center,
-                      style: Styles.textStyle20Settingcolor,
-                    ),
-                  )
+                  SizedBox(
+                      // width: 80,
+                      ),
                 ],
               ),
               SingleChildScrollView(
