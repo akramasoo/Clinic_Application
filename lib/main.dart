@@ -53,7 +53,10 @@ class MyApp extends StatelessWidget {
       title: 'Clinic_app',
       color: ColorApp.backgroundYallowColor,
       //
-
+      //
+      // getPages: AppPage.routes,
+      // initialRoute: AppPage.getBoarding_Start(),
+      home: PaymentCompleted(),
     );
   }
 }
