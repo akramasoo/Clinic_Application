@@ -1,5 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, must_be_immutable, prefer_const_constructors
 
+import 'package:carehealth/View/widget/textfield_screen/my_app_bar.dart';
+import 'package:carehealth/View/widget/textfield_screen/my_textfield_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -9,48 +11,30 @@ import '../../widget/textfield_screen/onboarding_text_form_field.dart';
 import 'appointment_booking.dart';
 
 class RegistrationPatientPage extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
-
+  TextEditingController idPatientController = TextEditingController();
+  TextEditingController fullNameController = TextEditingController();
+  TextEditingController userNameController = TextEditingController();
+  TextEditingController fileNoController = TextEditingController();
+  TextEditingController dateController = TextEditingController();
+  TextEditingController nationalIdController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController heightController = TextEditingController();
+  TextEditingController weightController = TextEditingController();
+  TextEditingController bloodTypeController = TextEditingController();
+  TextEditingController nameDiseaseController = TextEditingController();
+  TextEditingController descController = TextEditingController();
+  TextEditingController genderController = TextEditingController();
+  TextEditingController nationalityController = TextEditingController();
+  String imagePath = 'assets/images/textfield';
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            // ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            ColorApp.greenColor2,
-            ColorApp.greenColor2,
-          ],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-      ),
+    return MyTextFieldContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          foregroundColor: ColorApp.blackColor,
-          leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.keyboard_arrow_left, size: 35),
-          ),
-          elevation: 0.0,
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          title: const Text(
-            'registration patient',
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
-                color: ColorApp.blackColor,
-                fontFamily: 'Montserrat'),
-          ),
+        appBar: MyAppBar(
+          title: 'registration patient',
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -71,103 +55,136 @@ class RegistrationPatientPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: idPatientController,
                   validator: () {},
                   hintText: '#ID patient',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/path.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: fullNameController,
                   validator: () {},
                   hintText: 'Full name',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/user.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: userNameController,
                   validator: () {},
                   hintText: '@username',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/person_up.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: fileNoController,
                   validator: () {},
                   hintText: 'File No.',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/person_plus.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: dateController,
                   validator: () {},
                   hintText: 'date of birth',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/date.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: nationalIdController,
                   validator: () {},
                   hintText: 'National ID',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/user.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: phoneController,
                   validator: () {},
                   hintText: 'phone number',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.phone,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/phone.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: emailController,
                   validator: () {},
                   hintText: 'Patient Email',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.emailAddress,
                   obscureText: false,
+                  suffixIcon: Icon(Icons.email_outlined),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: addressController,
                   validator: () {},
                   hintText: 'home adress',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.streetAddress,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/location.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: heightController,
                   validator: () {},
                   hintText: 'patient\'s height',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   obscureText: false,
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: weightController,
                   validator: () {},
                   hintText: 'Patient weight',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   obscureText: false,
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: bloodTypeController,
                   validator: () {},
                   hintText: 'blood type',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Icon(Icons.keyboard_arrow_down),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: nameDiseaseController,
                   validator: () {},
                   hintText: 'Chose name of the disease',
                   keyboardType: TextInputType.name,
@@ -175,7 +192,7 @@ class RegistrationPatientPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: descController,
                   validator: () {},
                   hintText: 'Description of the disease',
                   keyboardType: TextInputType.name,
@@ -184,19 +201,21 @@ class RegistrationPatientPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: genderController,
                   validator: () {},
                   hintText: 'geneder',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Icon(Icons.keyboard_arrow_down),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: nationalityController,
                   validator: () {},
                   hintText: 'Nationality',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Icon(Icons.keyboard_arrow_down),
                 ),
                 const SizedBox(height: 92),
                 OnBoardingButton(

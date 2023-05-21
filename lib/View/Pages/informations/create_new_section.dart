@@ -1,5 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, must_be_immutable, prefer_const_constructors
 
+import 'package:carehealth/View/widget/textfield_screen/my_app_bar.dart';
+import 'package:carehealth/View/widget/textfield_screen/my_textfield_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -10,48 +12,17 @@ import '../../widget/textfield_screen/onboarding_text_widget.dart';
 import 'create_insurance_company.dart';
 
 class CreateNewSectionPage extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
-
+  TextEditingController idSectionController = TextEditingController();
+  TextEditingController departmentController = TextEditingController();
+  TextEditingController descController = TextEditingController();
+  String imagePath = 'assets/images/textfield';
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            // ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            ColorApp.greenColor2,
-            ColorApp.greenColor2,
-          ],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-      ),
+    return MyTextFieldContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          foregroundColor: ColorApp.blackColor,
-          leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.keyboard_arrow_left, size: 35),
-          ),
-          elevation: 0.0,
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          title: const Text(
-            'Create a new section',
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
-                color: ColorApp.blackColor,
-                fontFamily: 'Montserrat'),
-          ),
+        appBar: MyAppBar(
+          title: 'Create a new section',
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -77,27 +48,33 @@ class CreateNewSectionPage extends StatelessWidget {
                     color: ColorApp.primaryColor),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: idSectionController,
                   validator: () {},
                   hintText: '#Id Section',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/id_section.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(
                   height: 15.0,
                 ),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: departmentController,
                   validator: () {},
                   hintText: 'Department Name',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/depname.png',
+                    height: 1,
+                  ),
                 ),
                 const SizedBox(
                   height: 15.0,
                 ),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: descController,
                   validator: () {},
                   hintText: 'description',
                   keyboardType: TextInputType.name,

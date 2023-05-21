@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, use_key_in_widget_constructors, must_be_immutable
 
+import 'package:carehealth/View/widget/textfield_screen/my_app_bar.dart';
+import 'package:carehealth/View/widget/textfield_screen/my_textfield_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -10,48 +12,23 @@ import '../../widget/textfield_screen/onboarding_text_widget.dart';
 import 'new_employee.dart';
 
 class NewInvoicesPage extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
+  TextEditingController idInvoicesController = TextEditingController();
+  TextEditingController payController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController dateController = TextEditingController();
+  TextEditingController paymentDueController = TextEditingController();
+  TextEditingController itemsController = TextEditingController();
+  TextEditingController accountingCodeController = TextEditingController();
+  TextEditingController customerAddressController = TextEditingController();
+  String imagePath = 'assets/images/textfield';
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            // ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            ColorApp.greenColor2,
-            ColorApp.greenColor2,
-          ],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-      ),
+    return MyTextFieldContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          foregroundColor: ColorApp.blackColor,
-          leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.keyboard_arrow_left, size: 35),
-          ),
-          elevation: 0.0,
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          title: const Text(
-            'New Invoices',
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
-                color: ColorApp.blackColor,
-                fontFamily: 'Montserrat'),
-          ),
+        appBar: MyAppBar(
+          title:  'New Invoices',
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -74,43 +51,56 @@ class NewInvoicesPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: idInvoicesController,
                       validator: () {},
                       hintText: '#ID Invoices',
-                      keyboardType: TextInputType.name,
+                      keyboardType: TextInputType.number,
                       obscureText: false,
+                      suffixIcon: Image.asset('$imagePath/id_section.png',
+                        height: 1,
+                      ),
+
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: payController,
                       validator: () {},
                       hintText: 'Pay for',
-                      keyboardType: TextInputType.name,
+                      keyboardType: TextInputType.text,
                       obscureText: false,
+                      suffixIcon: Icon(Icons.keyboard_arrow_down),
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: addressController,
                       validator: () {},
                       hintText: 'Invoices address',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Image.asset('$imagePath/location.png',
+                        height: 1,
+                      ),
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: dateController,
                       validator: () {},
                       hintText: 'Date for transmission',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Image.asset('$imagePath/date.png',
+                        height: 1,
+                      ),
+
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: paymentDueController,
                       validator: () {},
                       hintText: 'Payment due',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Icon(Icons.keyboard_arrow_down),
                     ),
                     // const SizedBox(height: 15.0),
                   ],
@@ -140,27 +130,34 @@ class NewInvoicesPage extends StatelessWidget {
                 child: Column(
                   children: [
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: itemsController,
                       validator: () {},
                       hintText: 'Items',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Icon(Icons.keyboard_arrow_down),
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: accountingCodeController,
                       validator: () {},
                       hintText: 'Accounting code',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Image.asset('$imagePath/code.png',
+                        height: 1,
+                      ),
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: customerAddressController,
                       validator: () {},
                       hintText: 'Customer address 1',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Image.asset('$imagePath/location.png',
+                        height: 1,
+                      ),
                     ),
                     const SizedBox(height: 15.0),
                     Container(
@@ -268,11 +265,17 @@ class NewInvoicesPage extends StatelessWidget {
                   onPressed: () {},
                   child: Align(
                       alignment: Alignment.centerLeft,
-                      child: OnBoardingTextWidget(
-                        text: 'Message Client',
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          OnBoardingTextWidget(
+                            text: 'Message Client',
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
+                          Icon(Icons.add,color: ColorApp.greenColor,size: 35,)
+                        ],
                       )),
                 ),
               ),

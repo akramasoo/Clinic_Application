@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables, use_full_hex_values_for_flutter_colors
+// ignore_for_file: camel_case_types, prefer_const_constructors, sort_child_properties_last, prefer_const_literals_to_create_immutables, use_full_hex_values_for_flutter_colors, unnecessary_import
 
 import 'package:carehealth/constatnt/image_app.dart';
 import 'package:flutter/material.dart';
