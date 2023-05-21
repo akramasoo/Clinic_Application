@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
       //
       // getPages: AppPage.routes,
       // initialRoute: AppPage.getBoarding_Start(),
-      home: CenterInformationPage(),
+      home: HomePage(),
     );
   }
 }
