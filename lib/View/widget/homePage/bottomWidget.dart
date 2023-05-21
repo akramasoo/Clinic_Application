@@ -8,10 +8,13 @@ import '../../Pages/Trainer/payment.dart';
 class Bottom_1Widget extends StatelessWidget {
   final text;
   final textFont;
-  const Bottom_1Widget({
+  Function() ontap;
+   Bottom_1Widget({
     super.key,
     required this.text,
     required this.textFont,
+    required this.ontap,
+
   });
 
   @override
@@ -20,9 +23,7 @@ class Bottom_1Widget extends StatelessWidget {
       children: [
         Center(
           child: InkWell(
-            onTap: () {
-              Get.to(Payment());
-            },
+            onTap: ontap,
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 20.0),
               height: 55,

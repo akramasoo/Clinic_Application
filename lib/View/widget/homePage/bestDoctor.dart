@@ -79,12 +79,12 @@ class NewWidgetBestDoctorOne extends StatelessWidget {
   }
 }
 
-class NewWidgetBestDoctorOne_1 extends StatelessWidget {
+class WidgetBestDoctorOne_1 extends StatelessWidget {
   final num;
   final image;
   final hour;
   final name;
-  NewWidgetBestDoctorOne_1({
+  WidgetBestDoctorOne_1({
     super.key,
     required this.num,
     required this.image,
@@ -93,6 +93,8 @@ class NewWidgetBestDoctorOne_1 extends StatelessWidget {
   });
 
   final HomeController extController = Get.find();
+  var isPressed = false.obs;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -123,13 +125,13 @@ class NewWidgetBestDoctorOne_1 extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () {
-                      extController.changeColorIconFav();
+                      isPressed.value = !isPressed.value;
                     },
-                    child: Icon(
-                      extController.iconData,
-                      color: extController.iconColor,
-                      size: 11.0,
-                    ),
+                    child: Obx(() => Icon(
+                          isPressed.value ? Icons.favorite : Icons.favorite_border,
+                          color: isPressed.value ? Colors.red : Colors.grey,
+                          size: 13.0,
+                        )),
                   ),
                   Text(
                     '$num',
@@ -188,7 +190,7 @@ class NewWidgetBestDoctorTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.to(TrainerDetail());
+        // Get.to(TrainerDetail());
       },
       child: Container(
         margin: EdgeInsets.only(right: 17.0, top: 3.0, bottom: 5.0),
@@ -227,10 +229,23 @@ class NewWidgetBestDoctorTwo extends StatelessWidget {
                 fontSize: 12.0,
               ),
             ),
-            Text(
-              '*******',
-              style: TextStyle(color: ColorApp.blackColor, fontSize: 12.0),
-            ),
+            RatingBar.builder(
+              ignoreGestures: true,
+              itemSize: 16.0,
+              initialRating: 3.1,
+              minRating: 1,
+              direction: Axis.horizontal,
+              allowHalfRating: true,
+              itemCount: 5,
+              itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+              itemBuilder: (context, _) => Icon(
+                Icons.star,
+                color: Colors.amber,
+              ),
+              onRatingUpdate: (rating) {
+                print(rating);
+              },
+            )
           ],
         ),
       ),
@@ -254,12 +269,12 @@ class NewWidgetBestDoctorThree extends StatelessWidget {
   });
 
   final HomeController extController = Get.find();
-
+ var isPressed = false.obs;
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Get.to(TrainerDetail());
+        // Get.to(TrainerDetail());
       },
       child: Stack(
         children: [
@@ -284,15 +299,15 @@ class NewWidgetBestDoctorThree extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       InkWell(
-                        onTap: () {
-                          extController.changeColorIconFav();
-                        },
-                        child: Icon(
-                          extController.iconData,
-                          color: extController.iconColor,
-                          size: 15.0,
-                        ),
-                      ),
+                    onTap: () {
+                      isPressed.value = !isPressed.value;
+                    },
+                    child: Obx(() => Icon(
+                          isPressed.value ? Icons.favorite : Icons.favorite_border,
+                          color: isPressed.value ? Colors.red : Colors.grey,
+                          size: 13.0,
+                        )),
+                  ),
                       SizedBox(),
                       Text(
                         '$num',
@@ -316,9 +331,23 @@ class NewWidgetBestDoctorThree extends StatelessWidget {
                       fontSize: 12.0,
                       fontWeight: FontWeight.w600),
                 ),
-                SizedBox(
-                  height: 5.0,
-                ),
+                RatingBar.builder(
+              ignoreGestures: true,
+              itemSize: 16.0,
+              initialRating: 3.1,
+              minRating: 1,
+              direction: Axis.horizontal,
+              allowHalfRating: true,
+              itemCount: 5,
+              itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+              itemBuilder: (context, _) => Icon(
+                Icons.star,
+                color: Colors.amber,
+              ),
+              onRatingUpdate: (rating) {
+                print(rating);
+              },
+            ),
                 Center(
                   child: Text(
                     title,
