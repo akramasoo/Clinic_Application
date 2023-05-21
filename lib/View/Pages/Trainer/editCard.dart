@@ -39,22 +39,17 @@ class EditCard extends StatelessWidget {
                     child: Container(
                       child: Row(
                         children: [
-                          InkWell(
-                            onTap: () {
-                              Get.back();
-                            },
-                            child: Container(
-                              height: 32,
-                              width: 32,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: ColorApp.blackColor,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(3),
-                                child: Icon(Icons.arrow_back_ios_new_outlined,
-                                    size: 19, color: Colors.white),
-                              ),
+                          Container(
+                            height: 32,
+                            width: 32,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: ColorApp.blackColor,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(3),
+                              child: Icon(Icons.arrow_back_ios_new_outlined,
+                                  size: 19, color: Colors.white),
                             ),
                           ),
                           Padding(

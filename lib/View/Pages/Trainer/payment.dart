@@ -48,6 +48,8 @@ class Payment extends StatelessWidget {
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(3),
+
+
                               child: InkWell(
                                 onTap: () {
                                   Get.back();
@@ -55,6 +57,7 @@ class Payment extends StatelessWidget {
                                 child: Icon(Icons.arrow_back_ios_new_outlined,
                                     size: 19, color: Colors.white),
                               ),
+
                             ),
                           ),
                           Padding(
