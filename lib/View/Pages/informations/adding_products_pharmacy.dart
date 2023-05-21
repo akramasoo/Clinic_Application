@@ -1,57 +1,53 @@
-// ignore_for_file: use_key_in_widget_constructors, must_be_immutable, prefer_const_constructors
+// ignore_for_file: use_key_in_widget_constructors, must_be_immutable, prefer_const_constructors, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import '../../../constatnt/color_app.dart';
+import '../../widget/textfield_screen/my_app_bar.dart';
+import '../../widget/textfield_screen/my_textfield_container.dart';
 import '../../widget/textfield_screen/onboarding_button.dart';
 import '../../widget/textfield_screen/onboarding_text_form_field.dart';
 import '../../widget/textfield_screen/onboarding_text_widget.dart';
 import 'create_laboratory.dart';
 
 class ProductsPharamcyPage extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
+  TextEditingController idProductController = TextEditingController();
+  TextEditingController productNameController = TextEditingController();
+  TextEditingController descController = TextEditingController();
+  TextEditingController informationController = TextEditingController();
+  TextEditingController priceController = TextEditingController();
+  String imagePath = 'assets/images/textfield';
 
+  // PreferredSizeWidget myAppBar(){
+  //   return  AppBar(
+  //     foregroundColor: ColorApp.blackColor,
+  //     leading: IconButton(
+  //       onPressed: () {
+  //         Get.back();
+  //       },
+  //       icon: Icon(Icons.keyboard_arrow_left, size: 35),
+  //     ),
+  //     elevation: 0.0,
+  //     centerTitle: true,
+  //     backgroundColor: Colors.transparent,
+  //     title: const Text(
+  //       'Adding products pharamcyPage',
+  //       style: TextStyle(
+  //           fontWeight: FontWeight.w700,
+  //           fontSize: 18,
+  //           color: ColorApp.blackColor,
+  //           fontFamily: 'Montserrat'),
+  //     ),
+  //   );
+  // }
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            // ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            ColorApp.greenColor2,
-            ColorApp.greenColor2,
-          ],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-      ),
+    return MyTextFieldContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          foregroundColor: ColorApp.blackColor,
-          leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.keyboard_arrow_left, size: 35),
-          ),
-          elevation: 0.0,
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          title: const Text(
-            'Adding products pharamcyPage',
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
-                color: ColorApp.blackColor,
-                fontFamily: 'Montserrat'),
-          ),
+        appBar: MyAppBar(
+          title: 'Adding products pharmacyPage',
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -73,23 +69,31 @@ class ProductsPharamcyPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: idProductController,
                       validator: () {},
                       hintText: '#ID products',
-                      keyboardType: TextInputType.name,
+                      keyboardType: TextInputType.number,
                       obscureText: false,
+                      suffixIcon: Image.asset(
+                        '$imagePath/path.png',
+                        height: 1,
+                      ),
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: productNameController,
                       validator: () {},
                       hintText: 'product name',
                       keyboardType: TextInputType.name,
                       obscureText: false,
+                      suffixIcon: Image.asset(
+                        '$imagePath/user.png',
+                        height: 1,
+                      ),
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: descController,
                       validator: () {},
                       hintText: 'Product Description',
                       keyboardType: TextInputType.name,
@@ -98,7 +102,7 @@ class ProductsPharamcyPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 15.0),
                     OnBoardingTextFormField(
-                      controller: nameController,
+                      controller: informationController,
                       validator: () {},
                       hintText: 'Product information',
                       keyboardType: TextInputType.name,
@@ -130,11 +134,15 @@ class ProductsPharamcyPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 21.0),
                 child: OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: priceController,
                   validator: () {},
                   hintText: 'price \$',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset(
+                    '$imagePath/value.png',
+                    height: 1,
+                  ),
                 ),
               ),
               const SizedBox(height: 92),
@@ -143,9 +151,7 @@ class ProductsPharamcyPage extends StatelessWidget {
                   horizontal: 21.0,
                 ),
                 child: OnBoardingButton(
-                  onPressed: () {
-                    Get.to(CreateLaboratoryPage());
-                  },
+                  onPressed: () {},
                   text: 'SAVE',
                   size: 22,
                 ),

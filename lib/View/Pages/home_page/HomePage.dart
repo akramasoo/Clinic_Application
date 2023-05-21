@@ -47,172 +47,180 @@ class HomePage extends StatelessWidget {
             name_controller: name_controller),
         backgroundColor: Colors.transparent,
         //  Appar -----------------------------------------------------------------
-        body: Container(
-          height: double.infinity,
-          width: double.infinity,
-          child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.only(left: 34.5, right: 34.5),
+        body: Padding(
+          padding: const EdgeInsets.only(left: 22),
+          child: Container(
+            height: double.infinity,
+            width: double.infinity,
+            child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // photo -----------------------------------------------------------------
-                  Container(
-                    height: 249,
-                    width: double.infinity,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 55, bottom: 30, left: 10),
-                                  child: Container(
-                                    height: 160,
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                      color: ColorApp.Color_yellow_2,
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        Expanded(flex: 2, child: SizedBox()),
-                                        Expanded(
-                                          flex: 3,
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Container(
-                                                child: Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.end,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.end,
-                                                  children: [
-                                                    Container(
-                                                      height: 42.18,
-                                                      width: 200.37,
-                                                      padding: EdgeInsets.only(
-                                                          left: 10),
-                                                      child: Column(
-                                                        children: [
-                                                          Text(
-                                                            'Are you in any pain ! \nFind our certfed doctor!',
-                                                            style: C_TextStyle(
-                                                              size: 14,
-                                                              color: ColorApp
-                                                                  .whiteColor,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w700,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 14.5, right: 34.5),
+                    child: Container(
+                      height: 249,
+                      width: double.infinity,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 55, bottom: 30, left: 10),
+                                    child: Container(
+                                      height: 160,
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: ColorApp.Color_yellow_2,
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Expanded(flex: 2, child: SizedBox()),
+                                          Expanded(
+                                            flex: 3,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Container(
+                                                  child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.end,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment.end,
+                                                    children: [
+                                                      Container(
+                                                        height: 42.18,
+                                                        width: 200.37,
+                                                        padding:
+                                                            EdgeInsets.only(
+                                                                left: 10),
+                                                        child: Column(
+                                                          children: [
+                                                            Text(
+                                                              'Are you in any pain ! \nFind our certfed doctor!',
+                                                              style:
+                                                                  C_TextStyle(
+                                                                size: 14,
+                                                                color: ColorApp
+                                                                    .whiteColor,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w700,
+                                                              ),
                                                             ),
-                                                          ),
-                                                        ],
+                                                          ],
+                                                        ),
                                                       ),
-                                                    ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
-                                              ),
-                                              SizedBox(
-                                                height: 30,
-                                              ),
-                                            ],
+                                                SizedBox(
+                                                  height: 30,
+                                                ),
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Positioned(
-                                left: -28,
-                                top: 10,
-                                bottom: 22,
-                                child: Container(
-                                  height: 249,
-                                  width: 195,
-                                  child: Image.asset(
-                                    ImagesApp.photo,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                child: Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 90, left: 10),
+                                Positioned(
+                                  left: -28,
+                                  top: 10,
+                                  bottom: 22,
                                   child: Container(
-                                    height: 160,
-                                    width: double.infinity,
-                                    decoration: BoxDecoration(
-                                      // color: Colors.grey,
-                                      borderRadius: BorderRadius.circular(20),
+                                    height: 249,
+                                    width: 195,
+                                    child: Image.asset(
+                                      ImagesApp.photo,
+                                      fit: BoxFit.cover,
                                     ),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: [
-                                        Expanded(flex: 2, child: SizedBox()),
-                                        Expanded(
-                                          flex: 3,
-                                          child: Column(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              InkWell(
-                                                onTap: () {
-                                                  Get.to(Book_Now());
-                                                },
-                                                child: Container(
-                                                  height: 27.5,
-                                                  width: 110,
-                                                  decoration: BoxDecoration(
-                                                    color: ColorApp.blackColor2,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8),
-                                                  ),
-                                                  child: Center(
-                                                    child: Text(
-                                                      "Book Now",
-                                                      style: C_TextStyle(
-                                                        size: 14,
-                                                        color:
-                                                            ColorApp.whiteColor,
-                                                        fontWeight:
-                                                            FontWeight.w700,
+                                  ),
+                                ),
+                                Positioned(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 90, left: 10),
+                                    child: Container(
+                                      height: 160,
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        // color: Colors.grey,
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          Expanded(flex: 2, child: SizedBox()),
+                                          Expanded(
+                                            flex: 3,
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                InkWell(
+                                                  onTap: () {
+                                                    Get.to(Book_Now());
+                                                  },
+                                                  child: Container(
+                                                    height: 27.5,
+                                                    width: 110,
+                                                    decoration: BoxDecoration(
+                                                      color:
+                                                          ColorApp.blackColor2,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8),
+                                                    ),
+                                                    child: Center(
+                                                      child: Text(
+                                                        "Book Now",
+                                                        style: C_TextStyle(
+                                                          size: 14,
+                                                          color: ColorApp
+                                                              .whiteColor,
+                                                          fontWeight:
+                                                              FontWeight.w700,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                              Container(
-                                                height: 70,
-                                                width: 70,
-                                                child: Image.asset(
-                                                  ImagesApp.mdcl,
+                                                Container(
+                                                  height: 70,
+                                                  width: 70,
+                                                  child: Image.asset(
+                                                    ImagesApp.mdcl,
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   // select  ---------------------------------------------------------------
@@ -225,86 +233,103 @@ class HomePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Select your Goal',
-                                style: C_TextStyle(
-                                  size: 16,
-                                  color: ColorApp.blackColor,
-                                  fontWeight: FontWeight.w500,
+                          Padding(
+                            padding: const EdgeInsets.only(left: 22),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Select your Goal',
+                                  style: C_TextStyle(
+                                    size: 16,
+                                    color: ColorApp.blackColor,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                          SizedBox(height: 12),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                flex: 2,
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  height: 32,
-                                  width: 116,
-                                  decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 177, 177, 177),
-                                    borderRadius: BorderRadius.circular(4),
-                                  ),
-                                  child: Text(
-                                    "${book_1_controller}",
-                                    style: C_TextStyle(
-                                      size: 11,
-                                      color: ColorApp.greyColor5,
-                                      fontWeight: FontWeight.w500,
+                          Padding(
+                            padding: const EdgeInsets.only(top: 12),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  flex: 2,
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    height: 32,
+                                    width: 116,
+                                    decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 177, 177, 177),
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 9, bottom: 8),
+                                      child: Text(
+                                        "${book_1_controller}",
+                                        style: C_TextStyle(
+                                          size: 11,
+                                          color: ColorApp.greyColor5,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(width: 8),
-                              Expanded(
-                                flex: 2,
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  height: 32,
-                                  width: 116,
-                                  decoration: BoxDecoration(
-                                    color: ColorApp.blackColor2,
-                                    borderRadius: BorderRadius.circular(4),
-                                  ),
-                                  child: Text(
-                                    "${book_2_controller}",
-                                    style: C_TextStyle(
-                                      size: 11,
-                                      color: ColorApp.whiteColor,
-                                      fontWeight: FontWeight.w500,
+                                SizedBox(width: 8),
+                                Expanded(
+                                  flex: 2,
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    height: 32,
+                                    width: 116,
+                                    decoration: BoxDecoration(
+                                      color: ColorApp.blackColor2,
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 9, bottom: 8),
+                                      child: Text(
+                                        "${book_2_controller}",
+                                        style: C_TextStyle(
+                                          size: 11,
+                                          color: ColorApp.whiteColor,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(width: 8),
-                              Expanded(
-                                flex: 2,
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  height: 32,
-                                  width: 90,
-                                  decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 177, 177, 177),
-                                    borderRadius: BorderRadius.circular(4),
-                                  ),
-                                  child: Text(
-                                    "${book_3_controller}",
-                                    style: C_TextStyle(
-                                      size: 11,
-                                      color: ColorApp.greyColor5,
-                                      fontWeight: FontWeight.w500,
+                                SizedBox(width: 8),
+                                Expanded(
+                                  flex: 2,
+                                  child: Container(
+                                    alignment: Alignment.center,
+                                    height: 32,
+                                    width: 90,
+                                    decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 177, 177, 177),
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 9, bottom: 8),
+                                      child: Text(
+                                        "${book_3_controller}",
+                                        style: C_TextStyle(
+                                          size: 11,
+                                          color: ColorApp.greyColor5,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           )
                         ],
                       ),
@@ -312,7 +337,8 @@ class HomePage extends StatelessWidget {
                   ),
                   // Category  --------------------------------------------------------------
                   Padding(
-                    padding: const EdgeInsets.only(top: 28, bottom: 19),
+                    padding:
+                        const EdgeInsets.only(top: 28, bottom: 19, right: 24),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -350,225 +376,28 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 28, bottom: 20),
+                    padding:
+                        const EdgeInsets.only(top: 28, bottom: 20, right: 20),
                     child: Container(height: 2, child: New_Divider()),
                   ),
                   // Popular  --------------------------------------------------------------
                   Container(
-                    height: 270,
+                    height: 538,
                     width: double.infinity,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              'Popular Doctors',
-                              style: C_TextStyle(
-                                size: 18,
-                                color: ColorApp.blackColor,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            Text(
-                              'See all',
-                              style: C_TextStyle(
-                                size: 12,
-                                color: ColorApp.blackColor,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 13),
-                        Text(
-                          'Physiotherapy session for the elderly',
-                          style: C_TextStyle(
-                            size: 12,
-                            color: ColorApp.blackColor,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Row(
-                          children: [
-                            Text(
-                              'session duration',
-                              style: C_TextStyle(
-                                size: 10,
-                                color: ColorApp.blackColor,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(width: 5),
-                            Text(
-                              '|',
-                              style: C_TextStyle(
-                                size: 13,
-                                color: ColorApp.blackColor,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            SizedBox(width: 5),
-                            Icon(Icons.alarm,
-                                size: 19,
-                                color: ColorApp.backgrounOnBoardingTow),
-                            Text(
-                              ' 50 min',
-                              style: C_TextStyle(
-                                size: 10,
-                                color: ColorApp.blackColor,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Get.to(TrainerDetail());
-                          },
-                          child: Padding(
-                            padding: const EdgeInsets.only(top: 13, bottom: 14),
-                            child: Container(
-                              height: 155,
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16),
-                                image: DecorationImage(
-                                  image: ExactAssetImage(ImagesApp.Popular),
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              child: Stack(
-                                children: [
-                                  Positioned(
-                                    right: 20,
-                                    top: 25,
-                                    child: Container(
-                                      height: 40,
-                                      width: 40,
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(12)),
-                                      child: Icon(Icons.heart_broken,
-                                          size: 19, color: Colors.red),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(height: 2, child: New_Divider()),
-                      ],
-                    ),
-                  ),
-
-                  // Wound  --------------------------------------------------------------
-
-                  Padding(
-                    padding: const EdgeInsets.only(top: 13, bottom: 5),
-                    child: Text(
-                      'Wound changing and sterilization session',
-                      style: C_TextStyle(
-                        size: 18,
-                        color: ColorApp.blackColor,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-
-                  Row(
-                    children: [
-                      Text(
-                        'session duration',
-                        style: C_TextStyle(
-                          size: 10,
-                          color: ColorApp.blackColor,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      SizedBox(width: 5),
-                      Text(
-                        '|',
-                        style: C_TextStyle(
-                            color: ColorApp.blackColor,
-                            fontWeight: FontWeight.w500,
-                            size: 5),
-                      ),
-                      SizedBox(width: 5),
-                      Icon(Icons.alarm,
-                          size: 19, color: ColorApp.backgrounOnBoardingTow),
-                      Text(
-                        ' 50 min',
-                        style: C_TextStyle(
-                          size: 10,
-                          color: ColorApp.blackColor,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ],
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Get.to(TrainerDetail());
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 24),
-                      child: Container(
-                        height: 155,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(16),
-                          image: DecorationImage(
-                            image: ExactAssetImage(ImagesApp.Popular),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              right: 20,
-                              top: 25,
-                              child: Container(
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(12)),
-                                child: Icon(Icons.heart_broken,
-                                    size: 19, color: Colors.red),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.only(top: 28, bottom: 20),
-                    child: Container(height: 2, child: New_Divider()),
-                  ),
-                  // Meal Plans  --------------------------------------------------------------
-                  Container(
-                    height: 530,
-                    width: double.infinity,
-                    child: Column(
-                      children: [
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 24),
+                          padding: const EdgeInsets.only(right: 24, bottom: 13),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'Meal Plans',
+                                'Popular Doctors',
                                 style: C_TextStyle(
                                   size: 18,
                                   color: ColorApp.blackColor,
-                                  fontWeight: FontWeight.w600,
+                                  fontWeight: FontWeight.w500,
                                 ),
                               ),
                               Text(
@@ -582,148 +411,65 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        InkWell(
-                          onTap: () {
-                            Get.to(TrainerDetail());
+                        ListView.builder(
+                          scrollDirection: Axis.vertical,
+                          itemCount: 2,
+                          shrinkWrap: true,
+                          itemBuilder: (context, i) {
+                            return items_3[i];
                           },
-                          child: Container(
-                            height: 155,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(16),
-                              color: Colors.amber,
-                              image: DecorationImage(
-                                image: ExactAssetImage(ImagesApp.Popular),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            child: Stack(
-                              children: [
-                                Positioned(
-                                  right: 20,
-                                  top: 25,
-                                  child: Container(
-                                    height: 40,
-                                    width: 40,
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(12)),
-                                    child: Icon(Icons.heart_broken,
-                                        size: 19, color: Colors.red),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 15),
-                        // Gastric  --------------------------------------------------------------
-
-                        Row(
-                          children: [
-                            Text(
-                              'Gastric bypass surgery',
-                              style: C_TextStyle(
-                                size: 18,
-                                color: ColorApp.blackColor,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 5),
-                        Row(
-                          children: [
-                            Text(
-                              '1300\$ - 2000\$',
-                              style: C_TextStyle(
-                                size: 13,
-                                color: ColorApp.blackColor,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 5, bottom: 20),
-                          child: Container(height: 2, child: New_Divider()),
-                        ),
-                        Column(
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Get.to(TrainerDetail());
-                              },
-                              child: Container(
-                                height: 155,
-                                width: double.infinity,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  image: DecorationImage(
-                                    image: ExactAssetImage(ImagesApp.Popular),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                                child: Stack(
-                                  children: [
-                                    Positioned(
-                                      right: 20,
-                                      top: 25,
-                                      child: Container(
-                                        height: 40,
-                                        width: 40,
-                                        decoration: BoxDecoration(
-                                            color: Colors.white,
-                                            borderRadius:
-                                                BorderRadius.circular(12)),
-                                        child: Icon(Icons.heart_broken,
-                                            size: 19, color: Colors.red),
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 11),
-                            Row(
-                              children: [
-                                Text(
-                                  'LASIK eye surgery',
-                                  style: C_TextStyle(
-                                    size: 18,
-                                    color: ColorApp.blackColor,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 5, bottom: 18),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    '1300\$ - 2000\$',
-                                    style: C_TextStyle(
-                                      size: 13,
-                                      color: ColorApp.blackColor,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(height: 2, child: New_Divider()),
-                          ],
                         )
                       ],
                     ),
                   ),
-                  // The best doctors  --------------------------------------------------------------
 
+                  // Meal Plans  --------------------------------------------------------------
+
+                  Container(
+                    height: 540,
+                    width: double.infinity,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 24, bottom: 13),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Meal Plans',
+                                style: C_TextStyle(
+                                  size: 18,
+                                  color: ColorApp.blackColor,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                'See all',
+                                style: C_TextStyle(
+                                  size: 12,
+                                  color: ColorApp.blackColor,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        ListView.builder(
+                          scrollDirection: Axis.vertical,
+                          itemCount: 2,
+                          shrinkWrap: true,
+                          itemBuilder: (context, i) {
+                            return items_4[i];
+                          },
+                        )
+                      ],
+                    ),
+                  ),
+
+                  // The best doctors -------------------------------------------------------------------------
                   Padding(
-                    padding: const EdgeInsets.only(top: 21, bottom: 28),
+                    padding: const EdgeInsets.only(bottom: 28, right: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -765,7 +511,8 @@ class HomePage extends StatelessWidget {
                   // ================= ListViews =============================
                   NewListControllerBestDoctorOneWidget(),
                   Padding(
-                    padding: const EdgeInsets.only(top: 8, bottom: 8),
+                    padding:
+                        const EdgeInsets.only(top: 8, bottom: 8, right: 20),
                     child: Container(height: 5, child: New_Divider()),
                   ),
                   // =============== The best doctor text ====================
@@ -773,16 +520,17 @@ class HomePage extends StatelessWidget {
                   // =============== ListViews ===============================
                   NewListControllerBestDoctorTwoWidget(),
                   // ============== TwoTop card doctor rate ===============
-                  NewListDoctorControllerCardWidget(
-                      screenWidth: MediaQuery.of(context).size.width),
-                  // =============== Book now text ===========================
+
                   NewTextBookNowWidget(text: 'Book Now'),
                   // =============== List Categories =========================
                   NewListControllerCategoryWidget(
                       screenWidth: MediaQuery.of(context).size.width),
                   // =============== Three top card doctor rate ===========
-                  NewListControllerCardTwoWidget_1(
-                      screenWidth: MediaQuery.of(context).size.width),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20),
+                    child: NewListControllerCardTwoWidget_1(
+                        screenWidth: MediaQuery.of(context).size.width),
+                  ),
                   // =============== List doctor per houres ===============
                   NewListControllerBestDoctorOneWidget(),
                   // =============== popular doctors text =================

@@ -1,5 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, unused_import, must_be_immutable, prefer_const_constructors
 
+import 'package:carehealth/View/widget/textfield_screen/my_app_bar.dart';
+import 'package:carehealth/View/widget/textfield_screen/my_textfield_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -10,48 +12,23 @@ import 'create_pharmacy.dart';
 import 'disease_reporting.dart';
 
 class CreateLaboratoryPage extends StatelessWidget {
+  TextEditingController idLaboratoryController = TextEditingController();
   TextEditingController nameController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController websiteController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  String imagePath = 'assets/images/textfield';
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            // ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            ColorApp.greenColor2,
-            ColorApp.greenColor2,
-          ],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-      ),
+    return MyTextFieldContainer(
+
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          foregroundColor: ColorApp.blackColor,
-          leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.keyboard_arrow_left, size: 35),
-          ),
-          elevation: 0.0,
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          title: const Text(
-            'Create laboratory',
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
-                color: ColorApp.blackColor,
-                fontFamily: 'Montserrat'),
-          ),
+        appBar: MyAppBar(
+          title: 'Create laboratory',
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -72,11 +49,15 @@ class CreateLaboratoryPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: idLaboratoryController,
                   validator: () {},
                   hintText: '#ID laboratory',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/path.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
@@ -85,46 +66,60 @@ class CreateLaboratoryPage extends StatelessWidget {
                   hintText: 'laboratory Name',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/user.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: addressController,
                   validator: () {},
                   hintText: 'address',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.emailAddress,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/location.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: phoneController,
                   validator: () {},
                   hintText: 'phone number',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.phone,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/phone.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: emailController,
                   validator: () {},
                   hintText: 'E-mail',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.emailAddress,
                   obscureText: false,
+                  suffixIcon: Icon(Icons.email_outlined),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: websiteController,
                   validator: () {},
                   hintText: 'website',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.url,
                   obscureText: false,
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: passwordController,
                   validator: () {},
                   hintText: 'password',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Icon(Icons.visibility_off),
                 ),
                 const SizedBox(height: 89.0),
                 OnBoardingButton(

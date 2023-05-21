@@ -1,6 +1,8 @@
 // ignore_for_file: use_key_in_widget_constructors, must_be_immutable, prefer_const_constructors
 
 import 'package:carehealth/View/Pages/informations/registration_patient.dart';
+import 'package:carehealth/View/widget/textfield_screen/my_app_bar.dart';
+import 'package:carehealth/View/widget/textfield_screen/my_textfield_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -9,48 +11,22 @@ import '../../widget/textfield_screen/onboarding_button.dart';
 import '../../widget/textfield_screen/onboarding_text_form_field.dart';
 
 class NewExperiencesPage extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
-
+  TextEditingController idExperiencesController = TextEditingController();
+  TextEditingController nameExpController = TextEditingController();
+  TextEditingController namePlaceController = TextEditingController();
+  TextEditingController workPlaceController = TextEditingController();
+  TextEditingController beginningWorkController = TextEditingController();
+  TextEditingController workFinishedController = TextEditingController();
+  TextEditingController hisWorkController = TextEditingController();
+  String imagePath = 'assets/images/textfield';
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            // ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            ColorApp.greenColor2,
-            ColorApp.greenColor2,
-          ],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-      ),
+    return MyTextFieldContainer(
+
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          foregroundColor: ColorApp.blackColor,
-          leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.keyboard_arrow_left, size: 35),
-          ),
-          elevation: 0.0,
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          title: const Text(
-            'New Experiences',
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
-                color: ColorApp.blackColor,
-                fontFamily: 'Montserrat'),
-          ),
+        appBar: MyAppBar(
+          title: 'New Experiences',
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -71,59 +47,84 @@ class NewExperiencesPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: idExperiencesController,
                   validator: () {},
                   hintText: '#ID Experiences',
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/path.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: nameExpController,
                   validator: () {},
                   hintText: 'name of the experience',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/xmlid.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: namePlaceController,
                   validator: () {},
                   hintText: 'name of the place',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/xmlid2.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: workPlaceController,
                   validator: () {},
                   hintText: 'Work place country',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/location2.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: beginningWorkController,
                   validator: () {},
                   hintText: 'Beginning work',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/date.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: workFinishedController,
                   validator: () {},
                   hintText: 'work is finished',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/date.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: hisWorkController,
                   validator: () {},
                   hintText: 'Is he on top of his work.',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Icon(Icons.keyboard_arrow_down),
                 ),
                 const SizedBox(height: 64),
                 OnBoardingButton(
