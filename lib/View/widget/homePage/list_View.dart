@@ -1,12 +1,15 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, non_constant_identifier_names, unnecessary_import, avoid_unnecessary_containers, file_names, unnecessary_question_mark
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, non_constant_identifier_names, unnecessary_import, avoid_unnecessary_containers, file_names, unnecessary_question_mark, sized_box_for_whitespace, unnecessary_string_interpolations
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import '../../../constatnt/color_app.dart';
+import '../../../constatnt/font_app_styles.dart';
+import '../../../constatnt/image_app.dart';
 import '../../Pages/Trainer/editCard.dart';
 import '../../Pages/review/trainerDetailPage.dart';
+import 'divider.dart';
 
 //======Akram Page- 1 =========================================================
 
@@ -139,6 +142,177 @@ Widget grid_V_2(
           ],
         ),
       ),
+    ),
+  );
+}
+
+Widget grid_V_Popular({required String? title}) {
+  return Container(
+    height: 250,
+    width: double.infinity,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title!,
+          style: C_TextStyle(
+            size: 12,
+            color: ColorApp.blackColor,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        SizedBox(height: 5),
+        Row(
+          children: [
+            Text(
+              'session duration',
+              style: C_TextStyle(
+                size: 10,
+                color: ColorApp.blackColor,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            SizedBox(width: 5),
+            Text(
+              '|',
+              style: C_TextStyle(
+                size: 13,
+                color: ColorApp.blackColor,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            SizedBox(width: 5),
+            Icon(Icons.alarm, size: 19, color: ColorApp.backgrounOnBoardingTow),
+            Text(
+              ' 50 min',
+              style: C_TextStyle(
+                size: 10,
+                color: ColorApp.blackColor,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+        InkWell(
+          onTap: () {
+            Get.to(TrainerDetail());
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(top: 13, bottom: 14, right: 31),
+            child: Container(
+              height: 155,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                image: DecorationImage(
+                  image: ExactAssetImage(ImagesApp.Popular),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Stack(
+                children: [
+                  Positioned(
+                    right: 20,
+                    top: 25,
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12)),
+                      child:
+                          Icon(Icons.heart_broken, size: 19, color: Colors.red),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: 20),
+          child: Container(height: 3, child: New_Divider()),
+        ),
+      ],
+    ),
+  );
+}
+
+Widget grid_V_Meal_Plans({required String title, required String num}) {
+  return Container(
+    height: 250,
+    width: double.infinity,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        InkWell(
+          onTap: () {
+            Get.to(TrainerDetail());
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(right: 31),
+            child: Container(
+              height: 155,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: Colors.amber,
+                image: DecorationImage(
+                  image: ExactAssetImage(ImagesApp.Popular),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Stack(
+                children: [
+                  Positioned(
+                    right: 20,
+                    top: 25,
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12)),
+                      child:
+                          Icon(Icons.heart_broken, size: 19, color: Colors.red),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 15),
+        Row(
+          children: [
+            Text(
+              title,
+              style: C_TextStyle(
+                size: 12,
+                color: ColorApp.blackColor,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
+        ),
+        SizedBox(height: 5),
+        Row(
+          children: [
+            Text(
+              '$num',
+              style: C_TextStyle(
+                size: 13,
+                color: ColorApp.blackColor,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 5, bottom: 20, right: 20),
+          child: Container(height: 2, child: New_Divider()),
+        ),
+      ],
     ),
   );
 }
@@ -320,7 +494,7 @@ List items_1 = [
   list_V_1(name: 'Medical', name_image: 'a5.png'),
 ];
 
-//  items_2 page 1 ------------------------------------------------------------------------
+//  page 1 ------------------------------------------------------------------------
 
 List items_2 = [
   grid_V_2(
@@ -343,7 +517,20 @@ List items_2 = [
       color: ColorApp.backgroundonBoardingFour),
 ];
 
-// items_3 Page_3 ------------------------------------------------------------------------
+// Popular -----------------------------------------------------------
+List items_3 = [
+  grid_V_Popular(title: 'Physiotherapy session for the elderly'),
+  grid_V_Popular(title: 'Wound changing and sterilization session'),
+];
+
+// Meal_Plans -----------------------------------------------------------
+
+List items_4 = [
+  grid_V_Meal_Plans(title: 'Gastric bypass surgery', num: '1300\$ - 2000\$'),
+  grid_V_Meal_Plans(title: 'LASIK eye surgery', num: '1300\$ - 2000\$'),
+];
+
+//page_3 ------------------------------------------------------------------------
 
 List items_1_Page_3 = [
   grid_V_3(
