@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, file_names
+// ignore_for_file: prefer_const_constructors, file_names, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -79,9 +79,12 @@ class Reviews extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 70.0),
                     child: Bottom_1Widget(
-                        text: 'Write a Review', textFont: 'OpenSans',ontap: () {
-                          Get.to(WriteReview());
-                        },),
+                      text: 'Write a Review',
+                      textFont: 'OpenSans',
+                      ontap: () {
+                        Get.to(WriteReview());
+                      },
+                    ),
                   ),
                 ),
               )
@@ -95,15 +98,15 @@ class Reviews extends StatelessWidget {
 
 //==================== Bar Widget =====================================
 class BarWidget extends StatelessWidget {
-   BarWidget({
+  BarWidget({
     super.key,
     required this.screenWidth,
   });
 
   final double screenWidth;
-var isPressed1 = false.obs;
-var isPressed2 = true.obs;
-var isPressed3 = true.obs;
+  var isPressed1 = false.obs;
+  var isPressed2 = true.obs;
+  var isPressed3 = true.obs;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -114,71 +117,89 @@ var isPressed3 = true.obs;
             onTap: () {
               isPressed3.value = !isPressed3.value;
             },
-            child:Obx(() => Container(
-              height: 28,
-              width: screenWidth / 3,
-              decoration: BoxDecoration(
-                color: isPressed3.value ? ColorApp.blackBlueColor2: ColorApp.greenColor2,
-                borderRadius: BorderRadius.circular(24.0),
+            child: Obx(
+              () => Container(
+                height: 28,
+                width: screenWidth / 3,
+                decoration: BoxDecoration(
+                  color: isPressed3.value
+                      ? ColorApp.blackBlueColor2
+                      : ColorApp.greenColor2,
+                  borderRadius: BorderRadius.circular(24.0),
+                ),
+                child: Center(
+                    child: Text(
+                  'Favourable',
+                  style: TextStyle(
+                      color: isPressed3.value
+                          ? ColorApp.backgroundWhaitColor
+                          : ColorApp.blackColor2,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'OpenSans'),
+                )),
               ),
-              child: Center(
-                  child: Text(
-                'Favourable',
-                style: TextStyle(
-                    color: isPressed3.value ?ColorApp.backgroundWhaitColor:ColorApp.blackColor2,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'OpenSans'),
-              )),
-            ),),
+            ),
           ),
         ),
         Positioned(
           left: screenWidth / 3 - 20.0,
           child: InkWell(
-            onTap: () {              isPressed2.value = !isPressed2.value;
-},
-            child:Obx(() => Container(
-              height: 28,
-              width: screenWidth / 3,
-              decoration: BoxDecoration(
-                color: isPressed2.value ? ColorApp.blackBlueColor2: ColorApp.greenColor2,
-                borderRadius: BorderRadius.circular(24.0),
-              ),
-              child: Center(
-                  child: Text(
-                'Critical',
-                style: TextStyle(
-                    color:isPressed2.value ?ColorApp.backgroundWhaitColor:ColorApp.blackColor2,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'OpenSans'),
+              onTap: () {
+                isPressed2.value = !isPressed2.value;
+              },
+              child: Obx(
+                () => Container(
+                  height: 28,
+                  width: screenWidth / 3,
+                  decoration: BoxDecoration(
+                    color: isPressed2.value
+                        ? ColorApp.blackBlueColor2
+                        : ColorApp.greenColor2,
+                    borderRadius: BorderRadius.circular(24.0),
+                  ),
+                  child: Center(
+                      child: Text(
+                    'Critical',
+                    style: TextStyle(
+                        color: isPressed2.value
+                            ? ColorApp.backgroundWhaitColor
+                            : ColorApp.blackColor2,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'OpenSans'),
+                  )),
+                ),
               )),
-            ),)
-          ),
         ),
         Positioned(
           child: InkWell(
-            onTap: () {              isPressed1.value = !isPressed1.value;
-},
-            child:Obx(() => Container(
-              height: 28,
-              width: screenWidth / 3,
-              decoration: BoxDecoration(
-                color: isPressed1.value ? ColorApp.blackBlueColor2: ColorApp.greenColor2,
-                borderRadius: BorderRadius.circular(24.0),
-              ),
-              child: Center(
-                  child: Text(
-                'Recent',
-                style: TextStyle(
-                    color: isPressed1.value ?ColorApp.backgroundWhaitColor:ColorApp.blackColor2,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                    fontFamily: 'OpenSans'),
+              onTap: () {
+                isPressed1.value = !isPressed1.value;
+              },
+              child: Obx(
+                () => Container(
+                  height: 28,
+                  width: screenWidth / 3,
+                  decoration: BoxDecoration(
+                    color: isPressed1.value
+                        ? ColorApp.blackBlueColor2
+                        : ColorApp.greenColor2,
+                    borderRadius: BorderRadius.circular(24.0),
+                  ),
+                  child: Center(
+                      child: Text(
+                    'Recent',
+                    style: TextStyle(
+                        color: isPressed1.value
+                            ? ColorApp.backgroundWhaitColor
+                            : ColorApp.blackColor2,
+                        fontSize: 13,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'OpenSans'),
+                  )),
+                ),
               )),
-            ),)
-          ),
         )
       ],
     );

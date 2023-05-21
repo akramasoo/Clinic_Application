@@ -1,4 +1,4 @@
-// ignore_for_file: depend_on_referenced_packages, file_names, prefer_typing_uninitialized_variables, prefer_const_constructors, sized_box_for_whitespace, avoid_print, camel_case_types, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
+// ignore_for_file: depend_on_referenced_packages, file_names, prefer_typing_uninitialized_variables, prefer_const_constructors, sized_box_for_whitespace, avoid_print, camel_case_types, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -128,7 +128,9 @@ class WidgetBestDoctorOne_1 extends StatelessWidget {
                       isPressed.value = !isPressed.value;
                     },
                     child: Obx(() => Icon(
-                          isPressed.value ? Icons.favorite : Icons.favorite_border,
+                          isPressed.value
+                              ? Icons.favorite
+                              : Icons.favorite_border,
                           color: isPressed.value ? Colors.red : Colors.grey,
                           size: 13.0,
                         )),
@@ -269,7 +271,7 @@ class NewWidgetBestDoctorThree extends StatelessWidget {
   });
 
   final HomeController extController = Get.find();
- var isPressed = false.obs;
+  var isPressed = false.obs;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -299,15 +301,17 @@ class NewWidgetBestDoctorThree extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       InkWell(
-                    onTap: () {
-                      isPressed.value = !isPressed.value;
-                    },
-                    child: Obx(() => Icon(
-                          isPressed.value ? Icons.favorite : Icons.favorite_border,
-                          color: isPressed.value ? Colors.red : Colors.grey,
-                          size: 13.0,
-                        )),
-                  ),
+                        onTap: () {
+                          isPressed.value = !isPressed.value;
+                        },
+                        child: Obx(() => Icon(
+                              isPressed.value
+                                  ? Icons.favorite
+                                  : Icons.favorite_border,
+                              color: isPressed.value ? Colors.red : Colors.grey,
+                              size: 13.0,
+                            )),
+                      ),
                       SizedBox(),
                       Text(
                         '$num',
@@ -332,22 +336,22 @@ class NewWidgetBestDoctorThree extends StatelessWidget {
                       fontWeight: FontWeight.w600),
                 ),
                 RatingBar.builder(
-              ignoreGestures: true,
-              itemSize: 16.0,
-              initialRating: 3.1,
-              minRating: 1,
-              direction: Axis.horizontal,
-              allowHalfRating: true,
-              itemCount: 5,
-              itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
-              itemBuilder: (context, _) => Icon(
-                Icons.star,
-                color: Colors.amber,
-              ),
-              onRatingUpdate: (rating) {
-                print(rating);
-              },
-            ),
+                  ignoreGestures: true,
+                  itemSize: 16.0,
+                  initialRating: 3.1,
+                  minRating: 1,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+                  itemBuilder: (context, _) => Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                  ),
+                  onRatingUpdate: (rating) {
+                    print(rating);
+                  },
+                ),
                 Center(
                   child: Text(
                     title,
