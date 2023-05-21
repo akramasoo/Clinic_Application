@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types, non_constant_identifier_names, prefer_typing_uninitialized_variables, file_names
+// ignore_for_file: prefer_const_constructors, camel_case_types, non_constant_identifier_names, prefer_typing_uninitialized_variables, file_names, unused_import, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,10 +8,12 @@ import '../../Pages/Trainer/payment.dart';
 class Bottom_1Widget extends StatelessWidget {
   final text;
   final textFont;
-  const Bottom_1Widget({
+  Function() ontap;
+  Bottom_1Widget({
     super.key,
     required this.text,
     required this.textFont,
+    required this.ontap,
   });
 
   @override
@@ -20,9 +22,7 @@ class Bottom_1Widget extends StatelessWidget {
       children: [
         Center(
           child: InkWell(
-            onTap: () {
-              Get.to(Payment());
-            },
+            onTap: ontap,
             child: Container(
               margin: EdgeInsets.symmetric(horizontal: 20.0),
               height: 55,

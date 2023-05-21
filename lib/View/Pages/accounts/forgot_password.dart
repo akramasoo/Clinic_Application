@@ -26,7 +26,7 @@ class _Forgot_PasswordState extends State<Forgot_Password> {
             padding: const EdgeInsets.only(top: 47, right: 20, left: 20),
             child: GestureDetector(
               onTap: () {
-                Navigator.pop(context);
+                Get.back();
               },
               child: Icon(
                 Icons.arrow_back_ios,

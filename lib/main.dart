@@ -13,13 +13,15 @@ import 'View/Pages/home_page/speed_Dial.dart';
 import 'View/Pages/home_page/Book_Now.dart';
 import 'View/Pages/informations/center_information.dart';
 import 'View/Pages/profile/profile.dart';
+import 'View/Pages/review/appSettingPage.dart';
+import 'View/Pages/review/trainerDetailPage.dart';
 import 'constatnt/color_app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 SharedPreferences? sharedPref;
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // sharedPref = await SharedPreferences.getInstance();
+  WidgetsFlutterBinding.ensureInitialized();
+  sharedPref = await SharedPreferences.getInstance();
   runApp(MyApp());
 }
 
@@ -51,9 +53,9 @@ class MyApp extends StatelessWidget {
       title: 'Clinic_app',
       color: ColorApp.backgroundYallowColor,
       //
-      // getPages: AppPage.routes,
-      // initialRoute: AppPage.getBoarding_Start(),
-      home: PaymentCompleted(),
+
+      getPages: AppPage.routes,
+      initialRoute: AppPage.getBoarding_Start(),
     );
   }
 }
