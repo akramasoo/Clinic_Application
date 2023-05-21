@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, use_key_in_widget_constructors, must_be_immutable
 
+import 'package:carehealth/View/widget/textfield_screen/my_app_bar.dart';
+import 'package:carehealth/View/widget/textfield_screen/my_textfield_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -9,48 +11,21 @@ import '../../widget/textfield_screen/onboarding_text_form_field.dart';
 import 'new_doctor.dart';
 
 class NewProductPage extends StatelessWidget {
-  TextEditingController nameController = TextEditingController();
+  TextEditingController idProductController = TextEditingController();
+  TextEditingController productTypeController = TextEditingController();
+  TextEditingController productNameController = TextEditingController();
+  TextEditingController productDescController = TextEditingController();
+  TextEditingController unitPriceController = TextEditingController();
+  TextEditingController unitNumberController = TextEditingController();
 
+  String imagePath = 'assets/images/textfield';
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            // ColorApp.greenColor2,
-            Colors.white,
-            Colors.white,
-            ColorApp.greenColor2,
-            ColorApp.greenColor2,
-          ],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-      ),
+    return MyTextFieldContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: AppBar(
-          foregroundColor: ColorApp.blackColor,
-          leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(Icons.keyboard_arrow_left, size: 35),
-          ),
-          elevation: 0.0,
-          centerTitle: true,
-          backgroundColor: Colors.transparent,
-          title: const Text(
-            'New products / services',
-            style: TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
-                color: ColorApp.blackColor,
-                fontFamily: 'Montserrat'),
-          ),
+        appBar: MyAppBar(
+          title: 'New products / services',
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -71,23 +46,28 @@ class NewProductPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: idProductController,
                   validator: () {},
                   hintText: '#ID products',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Image.asset('$imagePath/id_section.png',
+                    height: 1,
+                  ),
+
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: productTypeController,
                   validator: () {},
                   hintText: 'Product type',
                   keyboardType: TextInputType.name,
                   obscureText: false,
+                  suffixIcon: Icon(Icons.keyboard_arrow_down),
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: productNameController,
                   validator: () {},
                   hintText: 'product name',
                   keyboardType: TextInputType.name,
@@ -95,7 +75,7 @@ class NewProductPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 15.0),
                 OnBoardingTextFormField(
-                  controller: nameController,
+                  controller: productDescController,
                   validator: () {},
                   hintText: 'Product Description',
                   keyboardType: TextInputType.name,
@@ -108,10 +88,10 @@ class NewProductPage extends StatelessWidget {
                     Expanded(
                       flex: 5,
                       child: OnBoardingTextFormField(
-                        controller: nameController,
+                        controller: unitPriceController,
                         validator: () {},
                         hintText: 'unit price \$',
-                        keyboardType: TextInputType.name,
+                        keyboardType: TextInputType.number,
                         obscureText: false,
                       ),
                     ),
@@ -121,10 +101,10 @@ class NewProductPage extends StatelessWidget {
                     Expanded(
                       flex: 5,
                       child: OnBoardingTextFormField(
-                        controller: nameController,
+                        controller: unitNumberController,
                         validator: () {},
                         hintText: 'Unit number',
-                        keyboardType: TextInputType.name,
+                        keyboardType: TextInputType.number,
                         obscureText: false,
                       ),
                     ),
