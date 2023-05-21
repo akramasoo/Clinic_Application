@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types, non_constant_identifier_names, prefer_typing_uninitialized_variables, file_names
+// ignore_for_file: prefer_const_constructors, camel_case_types, non_constant_identifier_names, prefer_typing_uninitialized_variables, file_names, unused_import, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,12 +9,11 @@ class Bottom_1Widget extends StatelessWidget {
   final text;
   final textFont;
   Function() ontap;
-   Bottom_1Widget({
+  Bottom_1Widget({
     super.key,
     required this.text,
     required this.textFont,
     required this.ontap,
-
   });
 
   @override

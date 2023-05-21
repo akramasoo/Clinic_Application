@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, file_names, annotate_overrides, sized_box_for_whitespace, avoid_unnecessary_containers, camel_case_types
+// ignore_for_file: prefer_const_constructors, file_names, annotate_overrides, sized_box_for_whitespace, avoid_unnecessary_containers, camel_case_types, unused_import
 
 import 'package:carehealth/View/Pages/accounts/write__review.dart';
 import 'package:carehealth/View/Pages/review/reviewsPage.dart';
@@ -140,9 +140,13 @@ class TrainerDetail extends StatelessWidget {
                   leftMar: 10.0,
                   bottomMar: 0.0),
               // ================= Bottom Widget ======================================
-              Bottom_1Widget(text: 'Book an Appointment', textFont: 'OpenSans',ontap: () {
-                Get.to(Appointment());
-              },),
+              Bottom_1Widget(
+                text: 'Book an Appointment',
+                textFont: 'OpenSans',
+                ontap: () {
+                  Get.to(Appointment());
+                },
+              ),
               SizedBox(
                 height: 47.0,
               )
