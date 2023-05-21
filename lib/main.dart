@@ -20,8 +20,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 SharedPreferences? sharedPref;
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // sharedPref = await SharedPreferences.getInstance();
+  WidgetsFlutterBinding.ensureInitialized();
+  sharedPref = await SharedPreferences.getInstance();
   runApp(MyApp());
 }
 
@@ -53,7 +53,10 @@ class MyApp extends StatelessWidget {
       title: 'Clinic_app',
       color: ColorApp.backgroundYallowColor,
       //
-
+      //
+      getPages: AppPage.routes,
+      initialRoute: AppPage.getBoarding_Start(),
+      // home: PaymentCompleted(),
     );
   }
 }
