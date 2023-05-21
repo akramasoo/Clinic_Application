@@ -520,7 +520,6 @@ class HomePage extends StatelessWidget {
                   // =============== ListViews ===============================
                   NewListControllerBestDoctorTwoWidget(),
                   // ============== TwoTop card doctor rate ===============
-
                   NewTextBookNowWidget(text: 'Book Now'),
                   // =============== List Categories =========================
                   NewListControllerCategoryWidget(
