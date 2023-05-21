@@ -2,7 +2,6 @@
 
 import 'package:carehealth/constatnt/color_app.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/icon_data.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -12,8 +11,15 @@ class HomeController extends GetxController {
 
    var isPressed1 = false.obs;
    var isPressed2 = false.obs;
-   var selectLanguage  = 'English';
-  var  dropdownText  = ['English', 'Spanish', 'Chinese','Japanese','French','German','Russian','Portugues','Italian','Korean',];
+final List<String> items = ['English', 'Spanish', 'Chinese','Japanese','French','German','Russian','Portugues','Italian','Korean'];
+
+late var selectedItem = items[0].obs;
+    
+    void updateSelectedItem(String item) {
+  selectedItem.value = item;
+}
+
+
 
 //=================== List Detaile doctores ============================
   List bestDoctorList = [

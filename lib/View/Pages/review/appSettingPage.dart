@@ -15,8 +15,9 @@ import '../profile/notifications.dart';
 class AppSetting extends StatelessWidget {
   AppSetting({super.key});
 
-  final HomeController extController = Get.put(HomeController(), permanent: true);
- 
+  final HomeController extController =
+      Get.put(HomeController(), permanent: true);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,17 +99,18 @@ class AppSetting extends StatelessWidget {
                       text: 'Apple Health', icon: Icons.favorite_outline),
                   Expanded(child: SizedBox()),
                   Transform.scale(
-                    scale: 1,
-                    child:Obx(() => CupertinoSwitch(
-                      trackColor: ColorApp.greyColor4,
-                      activeColor: ColorApp.greenColor2,
-              
-                      value: extController.isPressed1.isFalse,
-                      onChanged: (bool change) {
-                   extController.isPressed1.value = !extController.isPressed1.value;
-                      },
-                    ),)
-                  ),
+                      scale: 1,
+                      child: Obx(
+                        () => CupertinoSwitch(
+                          trackColor: ColorApp.greyColor4,
+                          activeColor: ColorApp.greenColor2,
+                          value: extController.isPressed1.isFalse,
+                          onChanged: (bool change) {
+                            extController.isPressed1.value =
+                                !extController.isPressed1.value;
+                          },
+                        ),
+                      )),
                 ],
               ),
             ),
@@ -124,15 +126,17 @@ class AppSetting extends StatelessWidget {
                   Expanded(child: SizedBox()),
                   Transform.scale(
                     scale: 1,
-                    child: Obx(() => CupertinoSwitch(
-                      trackColor: ColorApp.greyColor4,
-                      activeColor: ColorApp.greenColor2,
-              
-                      value: extController.isPressed2.isTrue,
-                      onChanged: (bool change) {
-                   extController.isPressed2.value = !extController.isPressed2.value;
-                      },
-                    ),),
+                    child: Obx(
+                      () => CupertinoSwitch(
+                        trackColor: ColorApp.greyColor4,
+                        activeColor: ColorApp.greenColor2,
+                        value: extController.isPressed2.isTrue,
+                        onChanged: (bool change) {
+                          extController.isPressed2.value =
+                              !extController.isPressed2.value;
+                        },
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -145,31 +149,21 @@ class AppSetting extends StatelessWidget {
                 children: [
                   LeftRowWidget(text: 'Language', icon: Icons.language),
                   Expanded(child: SizedBox()),
-                  Container(child:DropdownButtonHideUnderline(
-                    child: DropdownButton(
-                      iconEnabledColor: Colors.black,
-                      style: TextStyle(fontSize: 20),
-                      focusColor: Colors.white,
-                      dropdownColor: Colors.white,
-                      alignment: Alignment.center,
-                      hint: Text(' language',style: TextStyle(color: Colors.black),),
-                      items: extController.dropdownText
-                      .map((e) => DropdownMenuItem(
-                        child: Center(child: Text('$e',style: TextStyle(color: Colors.black),)),
-                        value: e,
-                        ))
-                      .toList(),
-                      onChanged: (val) {
-                          extController.selectLanguage = val!;
-                          extController.update();
-
-                        
-                       
+                  Container(
+                      child: Obx(
+                    () => DropdownButton(
+                      value: extController.selectedItem.value,
+                      items: extController.items.map((String item) {
+                        return DropdownMenuItem<String>(
+                          value: item,
+                          child: Text(item),
+                        );
+                      }).toList(),
+                      onChanged: (String? item) {
+                        extController.updateSelectedItem(item!);
                       },
-                      value: extController.selectLanguage,
                     ),
-                  ),
-    )
+                  )),
                 ],
               ),
             ),
@@ -180,7 +174,7 @@ class AppSetting extends StatelessWidget {
             //=====================upgrade ===============================
             InkWell(
               onTap: () {
-                  Get.to(Payment());
+                Get.to(Payment());
               },
               child: Container(
                 margin: EdgeInsets.only(left: 15, right: 15, bottom: 50),
@@ -253,9 +247,13 @@ class AppSetting extends StatelessWidget {
               ),
             ),
             // ================ Bottom Widget ==================================
-            Bottom_1Widget(text: 'Upgrade premium', textFont: 'BebasNeue',ontap: () {
-              Get.to(Payment());
-            },),
+            Bottom_1Widget(
+              text: 'Upgrade premium',
+              textFont: 'BebasNeue',
+              ontap: () {
+                Get.to(Payment());
+              },
+            ),
             SizedBox(
               height: 20.0,
             ),
