@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_typing_uninitialized_variables, unused_local_variable, prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names, avoid_unnecessary_containers
+// ignore_for_file: prefer_typing_uninitialized_variables, unused_local_variable, prefer_const_constructors, prefer_const_literals_to_create_immutables, file_names, avoid_unnecessary_containers, deprecated_member_use
 
 import 'package:carehealth/View/Pages/Trainer/payment.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,7 +22,9 @@ class AppSetting extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      backgroundColor: ColorApp.whiteColor,
+      backgroundColor: Theme.of(context).brightness == Brightness.light
+      ? Colors.white
+      : Colors.grey[900],
       //================== AppBar ==========================
       appBar: AppBar(
         // =============== Remove Screen Window ===============
@@ -30,21 +32,29 @@ class AppSetting extends StatelessWidget {
             SystemUiOverlayStyle(statusBarColor: Colors.transparent),
 
         shape: RoundedRectangleBorder(
-          side: BorderSide(color: ColorApp.whiteColor),
+          side: BorderSide(color: Theme.of(context).brightness == Brightness.light
+      ? Colors.white
+      : Colors.black),
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(35), topRight: Radius.circular(35)),
         ),
         centerTitle: true,
         elevation: 0,
-        shadowColor: ColorApp.whiteColor,
-        backgroundColor: ColorApp.whiteColor,
+        shadowColor: Theme.of(context).brightness == Brightness.light
+      ? Colors.white
+      : Colors.grey[900],
+        backgroundColor: Theme.of(context).brightness == Brightness.light
+      ? Colors.white
+      : Colors.grey[900],
         titleTextStyle: TextStyle(
             color: ColorApp.blackColor2,
             fontSize: 22.0,
             fontWeight: FontWeight.w400,
             fontFamily: 'BebasNeue'),
         title: Text(
-          'App Setting',
+          'App Setting',style: TextStyle(color: Theme.of(context).brightness == Brightness.light
+      ? Colors.black
+      : Colors.white,),
         ),
         leading: InkWell(
             onTap: () {
@@ -52,7 +62,9 @@ class AppSetting extends StatelessWidget {
             },
             child: Icon(
               Icons.arrow_back_ios,
-              color: ColorApp.blackColor2,
+              color: Theme.of(context).brightness == Brightness.light
+      ? Colors.black
+      : Colors.white,
             )),
       ),
       body: Container(
@@ -60,7 +72,9 @@ class AppSetting extends StatelessWidget {
           borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(35),
               bottomRight: Radius.circular(35)),
-          color: ColorApp.whiteColor,
+          color:  Theme.of(context).brightness == Brightness.light
+      ? Colors.white
+      : Colors.grey[900],
         ),
         // =========== ListView Widget ================================
         child: ListView(
@@ -134,6 +148,9 @@ class AppSetting extends StatelessWidget {
                         onChanged: (bool change) {
                           extController.isPressed2.value =
                               !extController.isPressed2.value;
+                              extController.changeToDarkMode();
+                            
+
                         },
                       ),
                     ),
@@ -288,7 +305,9 @@ class LeftRowWidget extends StatelessWidget {
       children: [
         Icon(
           icon,
-          color: ColorApp.blackColor2,
+          color: Theme.of(context).brightness == Brightness.light
+      ? Colors.black
+      : Colors.white,
           size: 30,
         ),
         SizedBox(width: 10.0),

@@ -21,6 +21,18 @@ late var selectedItem = items[0].obs;
 
 
 
+void changeToDarkMode(){
+  if (Get.isDarkMode) {
+    Get.changeTheme(ThemeData.light());
+    // print('object');
+  }else{
+    Get.changeTheme(ThemeData.dark());
+
+  }
+}
+
+
+
 //=================== List Detaile doctores ============================
   List bestDoctorList = [
     {
