@@ -1,5 +1,6 @@
 // ignore_for_file: unused_import, prefer_const_constructors
 
+import 'package:carehealth/View/Pages/choose_major/choose_major.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +20,7 @@ class SkipBottumWidget extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {
-            Get.off(Create_Accounts());
+            Get.off(ChooseMajor());
           },
           child: const Text(
             "Skip",

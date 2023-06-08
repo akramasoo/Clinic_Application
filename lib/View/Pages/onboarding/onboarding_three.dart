@@ -1,5 +1,6 @@
 // ignore_for_file: sized_box_for_whitespace, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, unused_import, prefer_const_constructors
 
+import 'package:carehealth/View/Pages/choose_major/choose_major.dart';
 import 'package:carehealth/View/Pages/home_page/navBar.dart';
 import 'package:carehealth/constatnt/color_app.dart';
 import 'package:flutter/material.dart';
@@ -92,7 +93,7 @@ class OnboardingThree extends GetView<OnBoardingControllerImp> {
                               const Spacer(),
                               NextButtomWidget(
                                 onTap: () {
-                                  Get.off(Create_Accounts());
+                                  Get.off(ChooseMajor());
                                 },
                               ),
                             ],
